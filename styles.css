@@ -1,0 +1,172 @@
+:root {
+    --navbar-width: 250px;
+  }
+
+html {
+    background-color: black;
+    color: white;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Nunito, Sanchez, Roboto, Georgia, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+  
+  a {
+    color: #ffffff;
+  }
+  
+  a:visited {
+    color: #ff0000;
+  }
+  
+  body {
+    border: 0px solid cyan;
+    text-align: left;
+    margin: 0;
+  
+    /* line-height:
+    */
+  }
+  
+  code {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    background-color: #bbbbbb;
+    border: 0px solid gray;
+    border-radius: 5px;
+  }
+  
+  header {
+    font-size: 1.5rem;
+    border: 0px solid yellow;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: normal;
+    margin-top: 2rem;
+  }
+  
+  .inline-code {
+    border-radius: 3px;
+    font-family: courier, monospace;
+    padding: 0 3px;
+  }
+  
+  #main-doc {
+    /* position: absolute; */
+    margin-left: calc(var(--navbar-width) + 4px + 10px);
+    text-align: left;
+    padding: 20px;
+    border: 0px solid pink;
+  }
+  
+  /*#
+  main-doc header {
+    
+  }
+  */
+  
+  #navbar {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    min-width: 150px;
+    width: var(--navbar-width);
+    height: 100%;
+    background-color: black;
+    border: 0px solid red;
+  }
+  
+  #navbar a {
+    display: block;
+    border: 0px solid cyan;
+    text-decoration: none;
+    margin: 10px;
+  }
+  
+  #navbar header {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  #navbar li {
+    width: 100%;
+    list-style: none;
+    border-bottom: 2px solid lightGreen;
+    margin: 0px;
+    padding: 5px;
+    /*    position: relative;  */
+  }
+  
+  #navbar ul {
+    border: 0px solid yellow;
+    padding: 0;
+    margin: 0;
+    height: 90%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* */
+  }
+  
+  section {
+    border-bottom: 2px solid lightgreen;
+    margin-bottom: 1.5rem;
+  }
+  
+  section article {
+    margin: 5px;
+    padding: 5px;
+    border: 0px solid lightGreen;
+  }
+  
+  section p {
+    border: 0px solid magenta;
+  }
+  
+  section ol,
+  ul {
+    margin-bottom: 2em;
+  }
+
+  @media only screen and (max-width: 450px) {
+    #main-doc {
+      margin: 210px auto;
+    }
+  
+    #navbar {
+      position: absolute;
+      top: 0;
+      width: calc(100% - 4px);
+      margin: 0 auto;
+      height: calc(
+        1.5rem + 20px + 4px + 4px + 4px + 3rem + 60px + 18px + 4px + 4px
+      );
+    }
+  
+    #navbar ul {
+      height: calc(3rem + 60px + 18px + 4px + 4px);
+    }
+  }
+  
+  @media only screen and (max-width: 307px) {
+    header {
+    }
+  
+    #navbar ul {
+      height: calc(2rem + 50px + 16px + 4px + 4px);
+    }
+  }
+  

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sanchez|Roboto|Nunito">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Accessible Mathematics</title>
+</head>
+
+<body>
+
+<!-- navbar must be on left side and always visible for landscape viewports  -->
+<!-- link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sanchez|Roboto|Nunito" -->
+
+<nav id="navbar">
+    <header>Accessible Mathematics</header>
+    <ul>
+      <li> <a href="#topic_1" class="nav-link">Introduction</a></li>
+      <li> <a href="#topic_1a" class="nav-link">Problem Statement</a></li>
+      <li> <a href="#topic_1b" class="nav-link">Sample Workflow</a></li>
+      <li> <a href="#topic_2" class="nav-link">Math Markup Languages</a></li>
+      <li> <a href="#topic_2a" class="nav-link">Typesetting Software</a></li>
+      <li> <a href="#topic_2b" class="nav-link">Web Display Engines</a></li>
+      <li> <a href="#topic_2c" class="nav-link">Conversion Tools</a></li>
+      <li> <a href="#topic_2d" class="nav-link">Tagged PDF</a></li>
+      <li> <a href="#topic_3" class="nav-link">Screen Readers</a></li>
+      <li> <a href="#topic_4" class="nav-link">Braille</a></li>
+      <li> <a href="#topic_5" class="nav-link">E-book Formats</a></li>
+      <li> <a href="#code_examples" class="nav-link">Code Examples</a></li>
+      <li> <a href="#list_items" class="nav-link">To Do List</a></li>
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <a name="top"></a>
+    <section class="main-section" id="topic_1">
+      <header>Introduction</header>
+      <article>
+        <p>What is Accessible Mathematics?</p>
+        <p>Accessibility and Accessible Design are a wide net of principles and practices to build inclusive environments and make content readily available to all people. Accessible design benefits everyone, and it is inspired by people who use Assistive Technology (AT).
+        </p>
+        <p>Accessible Mathematics is the application of this to mathematics.</p>
+      </article>
+    </section>
+    <section class="main-section" id="topic_1a">
+      <header>Problem Statement</header>
+      <article>
+        <p>Braille, Screen Readers, Human Narration, and Tactile Sign language are four approaches to conveying textual information to visually impaired readers. This is a more difficult task with mathematics because mathematical expressions require many more grammatical rules, and the same mathematical syntax may have several different semantic meanings based on the context. Software tools need a robust, context based semantic breakdown of mathematical expressions to parse these ambiguities.</p>
+        <p><abbr>HTML</abbr> has become the worldwide, cross-platform, device-independent markup language for encoding semantic information behind presented content. Math<abbr>ML</abbr> is the extension of <abbr>HTML</abbr> created to accommodate mathematics. Unfortunately, Math<abbr>ML</abbr> syntax is very verbose and generally not coded by hand, making it tenuous for authoring research, textbooks, and other long-format mathematics.</p>
+        <p>LaTeX is the worldwide standard markup language for authoring mathematics due to its concise, contextual syntax and huge library specialized extensions. But the LaTeX typesetting engine is designed for print, which strips away the contextual information needed for screen readers (tagged pdf articles).</p>
+        <p>A workflow for generating accessible mathematics content involves a hybrid approach between LaTeX and MathML. This process is described in stages throughout the rest of this document.</p>
+      </article>
+    </section>
+    <section class="main-section" id="topic_1b">
+      <header>Sample Workflow</header>
+      <article>
+        <p>Here is a high level sample workflow:</p>
+        <ol>
+          <li>Write mathematics in a markup language.</li>
+          <li>Include the math markup in an html document.</li>
+          <li>Format the html to be structurally accessible.</li>
+          <li>Test your document with a screen reader.</li>
+          <li>Customize the math Speech Rule Engine.</li>
+          <li>Test your document with a refreshable braille display.</li>
+          <li>Host the html file on a site.</li>
+          <li>Share your site with users.</li>
+          <li>Update the html to address any accessibility issues from user feedback.</li>
+        </ol>
+        <p>Here is an one sample workflow with specific software:</p>
+        <ol>
+          <li>Write your mathematics in a Markdown document using LaTeX delimiters and syntax.</li>
+          <li>Convert the Markdown document to <abbr>HTML</abbr> with Pandoc, using the MathJax option to convert the LaTeX to Math<abbr>ML</abbr>.</li>
+          <li>Test your document with VoiceOver (Mac), NVDA (Windows), and TalkBack (Android) in Firefox, Chrome, and Safari.</li>
+          <li>Customize the settings for the math Speech Rule Engine within the MathJax script of your <abbr>HTML</abbr> file.</li>
+          <li>Test your document with a refreshable braille display.</li>
+          <li>Upload the <abbr>HTML</abbr> file to your web site.</li>
+          <li>Test your <abbr>HTML</abbr> to ensure responsiveness and readability on a mobile device.</li>
+          <li>Test screen readability on a mobile device with VoiceOver (iOS) or Talkback (Android).</li>
+          <li>Share your site with users.</li>
+          <li>Update the <abbr>HTML</abbr> to address any accessibility issues from user feedback.</li>
+        </ol>
+        <p>While this is considerably more work than typesetting mathematics for print, the process will produce a working template that can be reused and improved, just like a workflow for print.</p>
+      </article>
+    </section>
+    <section class="main-section" id="topic_2">
+      <header>Math Markup Languages</header>
+      <article>
+        <p>Typeset mathematics is primarily written in a markup language. Three popular markup languages are: </p>
+        <ol>
+          <li>LaTeX</li>
+          <li>MathML</li>
+          <li>AsciiMath</li>
+        </ol>
+        <p>Plain text can be used for mathematics, with limited functionality. This is discussed at the end of this section.</p>
+        <p>The syntax of each markup language serves a dual purpose: to reference mathematical symbols and to determine the placement of the symbols based on the context. LaTeX is primarily designed for print or slide presentations on a fixed canvas size. MathML and AsciiMath are primarily designed for the web to accommodate a flexible canvas. Currently, a robust accessible math workflow requires a blend of both approaches.</p>
+        <h1>LaTeX</h1>
+        <p>The LaTeX typesetting system is the most popular method for typesetting mathematics. LaTeX is an outgrowth of TeX, a markup language and typesetting engine created in the 1985 to standardize typesetting mathematics and scientific formulas with printed text. For those familiar with HTML, LaTeX can loosely be thought of as as “<abbr>HTML</abbr> for paper”. It uses a context based syntax to signify chapters, sections, figures, lists, equations, self-referenced labeling, graphics, code snippets, and much, much more. This allows authors to focus on the content and let the LaTeX typesetting engine handle the presentation. LaTeX is extensible, open-source, regularly updated, and has a huge library of extended tools to serve literary, scientific, and artistic needs.</p>
+        <p>LaTeX markup can be written in any text editor, but the LaTeX typesetting engine is required to render the mathematical output. This is discussed in the next section on <a href="">Typesetting Software</a>.
+        <h1>MathML</h1>
+        <p>MathML was created in 1998 as an extension of <abbr>HTML</abbr> specifically to render mathematics on the web. MathML syntax is far more verbose than standard <abbr>HTML</abbr>, and is generally not coded by hand. Instead, <abbr>GUI</abbr> editors or conversion tools from the other languages to MathML are used to produce MathML code. There are two versions of MathML: <strong>Presentation MathML</strong> and <strong>Content MathML</strong>.</p>
+        <h1>AsciiMath</h1>
+        <p>AsciiMath is a math markup language for a small set of the most commonly used mathematical symbols. The syntax for a symbol is meant to mimic the symbol it represents, similar in spirit to emotive <abbr>ASCII</abbr> expressions that predate modern emoticons. It shares some similarity with basic LaTeX markup.</p>
+        <h1>Plain Text</h1>
+        <p>The Unicode Character Set contains a large collection of mathematical symbols that can be typed in plain text, without any special markup. This is only practical for very basic mathematical expressions, as it does not provide any additional formatting structure for fractions, matrices, and other special mathematical needs. Further, while the Unicode Character Set is updated periodically, it cannot immediately be amended to work with custom symbols. Still, it is worth mentioning because Unicode symbols will provide uniform semantic information to assistive technology across all platforms. This is the gold standard for accessibility.</p>
+      </article>
+    </section>
+    <section class="main-section" id="topic_2a">
+      <header>Typesetting Software</header>
+      <article>
+        <p>Any math markup syntax can be written in any plain text editor, but a typesetting engine is needed to interpret the markup and render the resulting mathematics. Thus, most authors use an <strong>integrated development environment</strong> (<abbr>IDE</abbr>), a software suite that provides all the necessary functionality in one package. We list a few popular software tools here, but please note there are many more available with their own unique features.</p>
+        <h1>LaTeX</h1>
+        <p>The LaTeX typesetting system includes:</p>
+        <ul>
+          <li>The core typesetting engine</li>
+          <li>A collection of add-on libraries</li>
+          <li>A self-updating utility</li>
+          <li>An editor</li>
+        </ul>
+        <p>Versions vary by operating system:</p>
+        <ul>
+          <li>MacTeX -- MacOS</li>
+          <li>MikTeX -- Windows</li>
+          <li>Linux -- varies by distribution</li>
+        </ul>
+        <p>Popular <abbr>IDE</abbr>s are:</p>
+        <ol>
+          <li>Overleaf -- online (Note: no installation required)</li>
+          <li>TexShop -- Mac</li>
+          <li>TeXworks -- Windows</li>
+          <li>TeXstudio -- Linux</li>
+          <li>LyX -- all platforms</li>
+        </ol>
+        <p>The <a href="https://editor.codecogs.com/" target="_blank">Code-Cogs Online LaTeX Editor</a> is a helpful browser based reference tool for popular LaTeX symbols.</p>
+        <p>More information is available at <a href="https://www.latex-project.org/" target="_blank">The LaTeX Project</a> website.
+        </p>
+        <h1>MathML</h1>
+        <p>MathML syntax is far more verbose than LaTeX and <abbr>HTML</abbr>. Consequently, most authors use a <abbr>GUI</abbr> editor instead of coding MathML directly. Please see the <a href="">Code Examples</a> section for a comparison of MathML and LaTeX code.</p>
+        <p>Popular MathML <abbr>GUI</abbr> editors:</p>
+        <ol>
+          <li>Wiris MathType -- standalone or as a part of various Office Suites and Learning Management Systems (all platforms)</li>
+          <li>Wiris MathFlow -- as a part of various professional XML systems</li>
+          <li>Mathcha -- online or downloadable Notebook editor (Mac/Windows/Linux)</li>
+          <li>MathML Central -- online converter by Wolfram Research</li>
+        </ol>
+        <p>The above <abbr>GUI</abbr> editors offer interactive menus and an instant preview of the rendered output, without the need to learn the underlying markup language. This may be more efficient for authoring documents with a small amount of mathematical content. </p>
+        <p>Some drawbacks of MathML:</p>
+        <ul>
+          <li><abbr>GUI</abbr> editors are not always accessible friendly.</li>
+          <li><abbr>GUI</abbr> are not efficient for long-form mathematics.
+          <li>MathML is still not natively supported in some modern browsers, despite being an extension of <abbr>HTML</abbr>.</li>
+        </ul>
+        <p>To remedy this last point, there are a number of Javascript tools that can render MathML in any modern browser. This is discussed in the <a href="">Web Display Engines</a> section.</p>
+        <h1>AsciiMath</h1>
+        <p>AsciiMath can be written with a text editor or any <abbr>HTML</abbr> authoring software. It is rendered in a web browsers with the MathJax display engine. Instructions are provided on the <a href="">AsciiMath home page</a>.</p>
+        <h1>GNU TeXmacs</h1>
+        <p>GNU TeXmacs is a <abbr>WYSIWYG</abbr> typesetting system that uses its own internal markup for rendering mathematics and scientific expressions. It was created as an alternative to LaTeX, incorporating realtime rendering and a more standardized internal data structure that can export to several different output formats. It is free and extensible, and can also operate as a front end for a number of other powerful mathematical software packages. More information is available at the <a href="" target="_blank">TeXmacs web site</a>.</p>
+        <p>Unfortunately, there is no mention of accessibility, screen reader output, or other <abbr>ARIA</abbr>-specific features in the TeXmacs documentation. Further testing is needed to determine how its conversions to <abbr>HTML</abbr> and MathML react with screen readers.
+      </article>
+    </section>
+    <section class="main-section" id="topic_2b">
+      <header>Web Display Engines</header>
+      <article>
+        <p>LaTeX is widely adopted and efficient to code, but does not provide a navigable document structure to assistive technology. MathML provides this structure, but it is inefficient to code and not supported in some browsers. To bridge this gap, there are JavaScript display engines that convert LaTeX markup to MathML and display the MathML in a browser:</p>
+        <ol>
+          <li>MathJax</li>
+          <li>KaTeX</li>
+          <li>MathLive</li>
+          <li>MathQuill</li>
+          <li>Latex.css</li>
+        </ol>
+        <p>These tools aim to provide a "best of both worlds" approach, where assistive technology can navigate MathML just as easily as <abbr>HTML</abbr>, while the underlying LaTeX markup can be translated to screen reader and Braille output. Each varies in its scope, method of application, and accessibility support.</p>
+        <h1>MathJax</h1>
+        <p><a href="https://www.mathjax.org/" target="_blank">MathJax</a> is the most popular method to render mathematics on the web. The MathJax engine searches an <abbr>HTML</abbr> document for mathematics markup embedded between LaTeX-style math mode delimiters (which are customizable), and renders it as math content on a web page. Users can customize the display formats (MathML fonts or <abbr>SVG</abbr> graphic), extract the math markup in both the LaTeX and MathML formats, and customize its math Speech Rule Engine (<abbr>SRE</abbr>). It integrates well with major content and learning management systems, and its excellent accessibility support makes it a key component of porting long-form mathematics into accessible friendly formats.</p>
+        <h1>KaTeX</h1>
+        <p><a href="https://katex.org/" target="_blank">KaTeX</a> is an engine that purports to render much faster than MathJax. This can provide a significant load time speedup for longer documents with a dense amount of LaTeX markup. Unfortunately, at this time, KaTeX has zero accessibility support, as assistive technology cannot read the MathML rendered by KaTeX. Therefore, it is <strong>not advisable</strong> to use KaTeX to port mathematics for non-sighted users.</p>
+        <h1>MathLive</h1>
+        <p><a href="https://cortexjs.io/mathlive/" target="_blank">MathLive</a> is a component of the <a href="https://cortexjs.io/" target="_blank">Cortex.js</a> family of web-based mathematical applications. MathLive accepts LaTeX input, offers a virtual keyboard with popular mathematical symbols, and offers a choice between its own built-in speech rules for screen reader math output or the same Speech Rule Engine (<abbr>SRE</abbr>) used in MathJax, both of which are customizable.</p>
+        <h1>MathQuill</h1>
+        <p><a href="http://mathquill.com/" target="_blank">MathQuill</a> offers an interactive web formula editor where users can enter text or LaTeX-style math markup and see it rendered into MathML in real-time. It can also render individual, static formulas through individual function calls. MathQuill does not appear to offer support for screen readers nor other assistive technology at this time.</p>
+        <h1>LaTeX.css</h1>
+        <p><a href="https://latex.vercel.app/" target="_blank">LaTeX.css</a> is a very cleverly constructed <abbr>CSS</abbr> library that faithfully reproduces LaTeX-style formatting for numerous LaTeX environments, providing a more seamless transition for those coming from a LaTeX background. LaTeX.css is not its own math display engine; rather, it uses MathJax to render mathematics formula, giving it a full set of accessibility features.</p>
+      </article>
+    </section>
+    <section class="main-section" id="topic_2c">
+      <header>Conversion Tools</header>
+      <article>
+        <p>The web display engines above are only meant to read and render mathematics markup. The content itself must already be contained in an <abbr>HTML</abbr> document, and the display engines must be set up with the appropriate Javascript <span class="inline-code">script</span> parameters. In addition, the <abbr>HTML</abbr> document will likely require some responsive <abbr>CSS</abbr> to accommodate the multitude of devices accessing web content today.</p>
+        <p>Even beyond this, many authors and organizations may need to convert entire documents. An article written in LaTeX, for example, may contain:</p>
+        <ol>
+          <li>Inline mathematics</li>
+          <li>Block display mathematics</li>
+          <li>Abstract</li>
+          <li>Table of Contents</li>
+          <li>Document Sections</li>
+          <li>Tables</li>
+          <li>Special formatting for content blocks such as theorems, lemmas, and definitions.</li>
+          <li>Numbered or bulleted lists</li>
+          <li>Images</li>
+          <li>Figures</li>
+          <li>Code Blocks</li>
+          <li>Footnotes</li>
+          <li>Automatic numbering for any of the above</li>
+          <li>Bibliography</li>
+        </ol>
+        <p>As many of these elements are also native to <abbr>HTML</abbr>, a direct conversion is theoretically <em>possible</em>, but quite difficult in practice.</p>
+        <p>There are several document conversion tools to assist with this part of the process. Each has their own strengths, and each conversion will require some additional testing for responsiveness across devices and accessibility support. The tools discussed here are:</p>
+        <ol>
+          <li>Markdown</li>
+          <li>Pandoc</li>
+          <li>TeX4ht</li>
+          <li>Latexml</li>
+          <li>Latex.js</li>
+          <li>Latex2html</li>
+        </ol>
+        <h1>Markdown</h1>
+        <p><a href="https://www.markdownguide.org/getting-started/" target="_blank">Markdown</a> is not so much a conversion <em>tool</em> as it is a markup language itself that is meant to <em>be converted</em> into <abbr>HTML</abbr>. Markdown is a bridge between plain text and <abbr>HTML</abbr>, designed for fast authoring but still readable as plain text. Markdown uses syntax such as <span class="inline-code">*emphasis text*</span> to represent <em>emphasis text</em> and <span class="inline-code">**strong**</span> to represent <strong>strong text</strong>. It is an ideal option for authors that want to minimize the amount of additional coding needed to render their work.</p>
+        <p>Markdown can be written in any text editor, but requires a Markdown reader to render its output. Many browsers, <abbr>HTML</abbr> authoring tools, collaborative workspaces, and online forums can automatically read and render Markdown.</p>
+        <p>LaTeX markup can be included in a Markdown document by enclosing the LaTeX code between math mode delimiters, just as in an <abbr>HTML</abbr> document. Then, the entire Markdown document can be converted to <abbr>HTML</abbr> by a popular tool called Pandoc. This process is described below.</p>
+  
+        <h1>Pandoc</h1>
+        <p><a href="https://pandoc.org/index.html" target="_blank">Pandoc</a> is an extremely powerful "universal document converter" capable of parsing and converting between hundreds of file formats. It is run from a command line interface (<abbr>CLI</abbr>) by specifying the to- and from- formats along with any special options available to those formats.</p>
+        <p>As mentioned above, for a Markdown document that contains mathematics markup, Pandoc can call MathJax (or another engine) to render the mathematics as it converts the Markdown syntax to <abbr>HTML</abbr>. The resulting <abbr>HTML</abbr> file will have MathJax automatically set up in the <span class="inline-code">script</span> section, and can work as a template for future use.</p>
+        <p>We encourage you to read more about the many capabilities of Pandoc at the <a href="https://pandoc.org/index.html" target="_blank">Pandoc home page</a>.</p>
+  
+        <h1>TeX4ht</h1>
+        <p><a href="https://tug.org/tex4ht/" target="_blank">TeX4ht</a> was developed in 2004 to convert directly from TeX source files to <abbr>HTML</abbr> and several other formats. It is now included as part of the TeXLive and MikTeX distributions. It incorporates MathJax (and other methods) for mathematics output, includes the ability to add some custom <abbr>CSS</abbr> to the final <abbr>HTML</abbr> output, can convert documents written with R Markdown (discussed under the Ebooks section) and Overleaf, and has other unique features.</p>
+        <h1>LaTeXML</h1>
+        <p><a href="https://math.nist.gov/~BMiller/LaTeXML/">LaTeXML</a> was developed to convert LaTeX markup to an internal <abbr>XML</abbr> format specifically for the <a href="https://dlmf.nist.gov/" target="_blank">Digital Library of Mathematical Functions</a> (<abbr>DLMF</abbr>) project at the <a href="https://www.nist.gov/" target="_blank">National Institute of Standards and Technology</a> (<abbr>NIST</abbr>). In turn, the internal <abbr>XML</abbr> could be used to export to <abbr>HTML</abbr>, with various customizable settings. It also uses MathJax to render mathematics. The LaTeXML site has a sample web editor that converts user input to rendered <abbr>HTML</abbr>, and offers numerous built-in examples.</p>
+        <h1>LaTeX.js</h1>
+        <p><a href="https://latex.js.org/" target="_blank">LaTeX.js</a> is an interesting engine that ports full LaTeX documents into <abbr>HTML</abbr> while also reproducing their original LaTeX style formatting, similar to LaTeX.css. The web site showcases a side by side comparison of a sample LaTeX document to the rendered <abbr>HTML</abbr>. The engine is extensible and the project aims to automate translation of more native LaTeX environments. LaTeX.js uses the KaTeX engine to render mathematical formulas, and thus does not have accessibility support at this time.</p>
+        <h1>LaTeX2HTML</h1>
+        <p><a href="https://www.latex2html.org/" target="_blank">LaTeX2HTML</a> was ahead of the curve, dating back to 1999. It is a command line tool that converts a LaTeX document into several <abbr>HTML</abbr> files to provide a paginated navigation similar to the original LaTeX PDF output. It automatically generates necessary hyperlinks, recreates lists, and converts mathematics, tables, and figures as into images. While the process does not provide alt-text, an author can insert alt-text for all necessary components.</p>
+      </article>
+    </section>
+    <section class="main-section" id="topic_2d">
+      <header>Tagged PDF</header>
+      <article>
+        <p>What is tagged pdf?</p>
+        Tagged PDF is a semantically enriched PDF file that provides navigation structure for assistive technology.
+        If this sounds similar to the idea behind HTML, that's because it is.
+        Remarkably similar to HTML discussion.
+        PDF internationally standardized 2008.
+        PDF was meant to be a universally accessible document, and has had tagging ability since 2001 (?). 
+        PDF/UA standard as accessible format (year?)
+        Authoring tools are limited to office & publishing.
+        There is a formula tag in the PDF/UA specifications, but to this day, no authoring tools exist for math!
+        <p>adobe links (list of tags...nothing about math?)</p>
+        <p>Research has been ongoing to incorporate tagged pdf ability in the LaTeX engine.  TUG articles</p>
+        <p>HTML to PDF wit Prince (Bruce Lawson article reference)</p>
+  
+      </article>
+    </section>
+    <section class="main-section" id="topic_3">
+      <header>Screen Readers</header>
+      <article>
+        <p>"Screen readers are software programs that allow blind or visually impaired users to read the text that is displayed on the computer screen with a speech synthesizer or braille display." Taken from AFB page:</p>
+          American Foundation for the Blind (<abbr>AFB</abbr>) has an <a href="https://www.afb.org/blindness-and-low-vision/using-technology/assistive-technology-products/screen-readers">extensive list of screen readers</a>.
+        </p>
+        <p>Screen reader hardware vs. Screen reader software.</p>
+        <p>Demonstration video.</p>
+        <p>Function: announces structure of a web page and reads the content aloud.</p>
+        <p>ARIA roles specifically meant to provide additional contextual information: link</p>
+        <p>Popular Screen Readers:
+            <ol>
+          <li>VoiceOver - Apple</li>
+          <li>JAWS - Windows</li>
+          <li>NVDA - Windows</li>
+          <li>Talkback - Android</li>
+          <li>Orca - Linux</li>
+          <li>Narrator - Windows</li>
+        </ol>
+        <p>Application to mathematics -- reader informs user of a mathematical container.</p>
+        <p>Mathematical expressions can be read literally or contextually (examples: functions, vectors)</p>
+        <p>Mathematics Speech Rule Engine (Volker Sorge, Javascript)</p>
+        <p>MathSpeak (Abraham Nemeth)</p>
+        <p>MathPlayer (Wiris - no longer updated)</p>
+      </article>
+    </section>
+    <section class="main-section" id="topic_4">
+      <header>Braille</header>
+      <article>
+        <p>Standards for Math Braille:</p>
+        <ol>
+          <li>Nemeth Braille</li>
+          <li>UEB</li>
+          <li>GS8</li>
+          <li>DotsPlus</li>
+        </ol>
+        <h1>Nemeth Braille</h1>
+        <p>Nemeth Braille created in 1946 by Dr. Abraham Nemeth, and 
+          adopted by the Braille Authority of North America (<abbr>BANA</abbr>) in 1952.</p>
+          <p>It uses a 6-dot Braille cell representation, the same as literary braille.  There
+            are special opening and closing symbols (called <em>Nemeth Indicators</em>) that inform 
+            the reader when a Nemeth mathematical or scientific expression is embedded inside text.
+            Nemeth Braille has been successfully used and updated to represent every area of 
+            mathematics from elementary arithmetic to modern research, and it was expanded to
+            include unique symbols for Chemical Equations and other scientific expressions.
+          </p>
+        <p>The whole of Nemeth Braille was last revised in 1972: http://www.brailleauthority.org/mathscience/nemeth1972.pdf</p>
+        <p>but individual components are still updated by <abbr>BANA</abbr> (site).</p>
+        <p>Nemeth transcription for readers:  </p>
+        <h1>UEB</h1>
+        <p>UEB - literary and scientific</p>
+        <p>Unified English Braille (<abbr>UEB</abbr>) is an alternative extension of the English Braille 
+          American Edition (<abbr>EBAE</abbr>) literary braille system to include mathematical 
+        and scientific content.  It was an attempt to unify technical content with literary content
+        to ensure smoother transitions between math/science.  Uses existing Braille for numbers and
+      math operators rather than Nemeth symbols. (Example:  upper & lower numbers -- link)</p>
+        <p>EBAE literary braille</p>
+        <p>Nemeth created for math & science</p>
+        <p>Nemeth embedded in EBAE</p>
+        <p>2012, UEB adopted to incorporate both.  announcement: http://www.brailleauthority.org/mathscience/math-science.html</p>
+        <p>Code different from Nemeth, created a debate in the community</p>
+        <p>As of 2015, official position is to allow both, use preference of reader</p>
+        <p>NUBS is Nemeth's approach to a unified Braille, better embeddings of Nemeth into 
+          literary braille. NUBS: updated Nemeth http://www.dotlessbraille.org/nubs.htm
+        </p>
+        <h1>GS8</h1>
+        <p>GS8 -- Gardner-Salinas; developed by John Gardner and Norberto Salinas.  owned by dCode</p>
+        <p>Syntax based on LaTeX markup</p>
+        <p>Uses 8-dot cells, supported by Unicode;  Matches standard Braille </p>
+        <p>encoder/decoder: https://www.dcode.fr/gs8-braille-code</p>
+        <h1>DotsPlus</h1>
+        <p><a href="" target="_blank">DotsPlus</a> is a two-dimensional Braille system designed much
+        more as a tactile font that mimics a written symbol.  It was designed as a means for educators
+        to present mathematics or other scientific content to blind users without having to learn Braille.
+        It can be authored with MathType or other MathML generators and then output using the DotsPlus 
+      font from a computer.  </p>
+        <p>Braille Fonts:  Ascii Braille, Dotless Braille: http://www.dotlessbraille.org/index.html </p>
+        <p>MathML to Braille Duxbury, </p>
+        <p>LaTeX to Braille: DBT</p>
+        <p>screen readers have built-in Braille output that may need to be individually configured.
+          some informaition at: https://nemeth.aphtech.org/instructions
+        </p>
+      </article>
+    </section>
+    <section class="main-section" id="topic_5">
+      <header>E-book Formats</header>
+      <article>
+        <p>Typesetting platforms geared towards e-books.  </p>
+        <p>Math in E-book options:</p>
+        <ol>
+          <li>R Markdown</li>
+          <li>PreTeXt</li>
+          <li>Calibre</li>
+          <li>DAISY</li>
+        </ol>
+  
+        <p>E-book do not automatically render mathematics.</p>
+        <h1>R Markdown</h1>
+        <p>R Markdown is a version of Markdown adapted using the R scripting language.
+            The R Markdown platform allows users to include and execute code from numerous languages,
+            then export their document into HTML, PDF, presentation slides, many other formats.
+        </p>
+        <p>Accessibility: not only produces a high quality accessible document, it is also
+            a versatile accessible authoring tool (mention ATAG), outlined in these two articles:
+            article 1, article 2.  
+        </p>
+        <h1>PreTeXt</h1>
+        <p>PreTeXt</p>
+        <p>XML to create a fully functional e-textbook</p>
+        <p>Works from CLI</p>
+        <p>Own tags for Math mode.  Uses LaTeX syntax and MathJax to render.</p>
+        <p>Can be exported to HTML, PDF, other formats</p>
+        <p>UTMOST & accessibility/p>
+        <h1>Calibre</h1>
+        <p>Calibre (mathjax preconfigured for svg)</p>
+        <p>Calibre e-book viewer uses MathJax to view math.  Sample epub on <a href="" target="_blank">web site</a>
+        Renders math as SVG with alt-text according to SRE.
+        </p>
+        <h1>DAISY</h1>
+        <p>DAISY</p>
+        <p>international consortium of developers for creating and publishing accessible reading materials.</p>
+        <p>part of creating EPUB standard</p>
+        <p>Digital Talking Books (DAISY 3)</p>
+        <p>software production tools</p>
+        <p>news & events source</p>
+        <p>network partners</p>
+        <p>DAISY using MathML to display math;  integrated with its own XML.</p>
+        <p>Additional work to synchronize with Narration.</p>
+      </article>
+    </section>
+    <section class="main-section" id="code_examples">
+      <header>Code Examples</header>
+      <article>
+        <code>LaTeX Example (formulas table)</code>
+        <code>MathML Example (MathJax formulas table)</code>
+        <code>Markdown Example</code>
+        <code>Pandoc Conversion Example</code>
+        <code>LaTeXML Conversion example</code>
+        <code>MathJax Script Loader example</code>
+        <code><abbr>HTML</abbr> page with LaTeX math Example</code>
+      </article>
+    </section>
+    <section class="main-section" id="list_items">
+      <header>To Do List</header>
+      <article>
+        <ol>
+          <li>OpenMath</li>
+          <li>sTeX</li>
+          <li>Tactile Sign & ASL Math</li>
+          <li>ARIA math role</li>
+          <li>arXiv demo w/LaTeXML</li>
+          <li>fix sidebar width</li>
+          <li>fix media query</li>
+          <li>fix sidebar length</li>
+        </ol>
+      </article>
+    </section>
+    <footer>
+      <p style="text-align: right;"><a href="#top">Back to top of page</a>
+      </p>
+    </footer>
+  
+  </main>
+
+</body>
+</html>
