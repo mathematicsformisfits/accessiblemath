@@ -137,7 +137,8 @@
         <p>AsciiMath is a math markup language for a small set of the most commonly used mathematical symbols. The
           syntax for a symbol is meant to mimic the symbol it represents, similar in spirit to emotive
           <abbr>ASCII</abbr> expressions that predate modern emoticons. It shares some similarity with basic LaTeX
-          markup.</p>
+          markup.
+        </p>
         <h1>Plain Text</h1>
         <p>The Unicode Character Set contains a large collection of mathematical symbols that can be typed in plain
           text, without any special markup. This is only practical for very basic mathematical expressions, as it does
@@ -185,7 +186,8 @@
         <h1>MathML</h1>
         <p>MathML syntax is far more verbose than LaTeX and <abbr>HTML</abbr>. Consequently, most authors use a
           <abbr>GUI</abbr> editor instead of coding MathML directly. Please see the <a href="">Code Examples</a> section
-          for a comparison of MathML and LaTeX code.</p>
+          for a comparison of MathML and LaTeX code.
+        </p>
         <p>Popular MathML <abbr>GUI</abbr> editors:</p>
         <ol>
           <li>Wiris MathType -- standalone or as a part of various Office Suites and Learning Management Systems (all
@@ -202,7 +204,8 @@
           <li><abbr>GUI</abbr> editors are not always accessible friendly.</li>
           <li><abbr>GUI</abbr> are not efficient for long-form mathematics.
           <li>MathML is still not natively supported in some modern browsers, despite being an extension of
-            <abbr>HTML</abbr>.</li>
+            <abbr>HTML</abbr>.
+          </li>
         </ul>
         <p>To remedy this last point, there are a number of Javascript tools that can render MathML in any modern
           browser. This is discussed in the <a href="">Web Display Engines</a> section.</p>
@@ -269,7 +272,8 @@
           <abbr>CSS</abbr> library that faithfully reproduces LaTeX-style formatting for numerous LaTeX environments,
           providing a more seamless transition for those coming from a LaTeX background. LaTeX.css is not its own math
           display engine; rather, it uses MathJax to render mathematics formula, giving it a full set of accessibility
-          features.</p>
+          features.
+        </p>
       </article>
     </section>
     <section class="main-section" id="topic_2c">
@@ -299,7 +303,8 @@
           <li>Bibliography</li>
         </ol>
         <p>As many of these elements are also native to <abbr>HTML</abbr>, a direct conversion is theoretically
-          <em>possible</em>, but quite difficult in practice.</p>
+          <em>possible</em>, but quite difficult in practice.
+        </p>
         <p>There are several document conversion tools to assist with this part of the process. Each has their own
           strengths, and each conversion will require some additional testing for responsiveness across devices and
           accessibility support. The tools discussed here are:</p>
@@ -318,13 +323,15 @@
           but still readable as plain text. Markdown uses syntax such as <span class="inline-code">*emphasis
             text*</span> to represent <em>emphasis text</em> and <span class="inline-code">**strong**</span> to
           represent <strong>strong text</strong>. It is an ideal option for authors that want to minimize the amount of
-          additional coding needed to render their work.</p>
+          additional coding needed to render their work.
+        </p>
         <p>Markdown can be written in any text editor, but requires a Markdown reader to render its output. Many
           browsers, <abbr>HTML</abbr> authoring tools, collaborative workspaces, and online forums can automatically
           read and render Markdown.</p>
         <p>LaTeX markup can be included in a Markdown document by enclosing the LaTeX code between math mode delimiters,
           just as in an <abbr>HTML</abbr> document. Then, the entire Markdown document can be converted to
-          <abbr>HTML</abbr> by a popular tool called Pandoc. This process is described below.</p>
+          <abbr>HTML</abbr> by a popular tool called Pandoc. This process is described below.
+        </p>
 
         <h1>Pandoc</h1>
         <p><a href="https://pandoc.org/index.html" target="_blank">Pandoc</a> is an extremely powerful "universal
@@ -358,7 +365,8 @@
           LaTeX.css. The web site showcases a side by side comparison of a sample LaTeX document to the rendered
           <abbr>HTML</abbr>. The engine is extensible and the project aims to automate translation of more native LaTeX
           environments. LaTeX.js uses the KaTeX engine to render mathematical formulas, and thus does not have
-          accessibility support at this time.</p>
+          accessibility support at this time.
+        </p>
         <h1>LaTeX2HTML</h1>
         <p><a href="https://www.latex2html.org/" target="_blank">LaTeX2HTML</a> was ahead of the curve, dating back to
           1999. It is a command line tool that converts a LaTeX document into several <abbr>HTML</abbr> files to provide
@@ -425,51 +433,64 @@
           <li>DotsPlus</li>
         </ol>
         <p>From a computer, Braille can be read by a user with a <a href="">Refreshable Braille Display</a>,
-          and printed out onto perforated paper using special <a href="">Braille Printers</a>.</p>
-        <p>MathJax support?</p>
-
+          and/or printed out onto perforated paper using special <a href="">Braille Printers</a>.</p>
+        <p>MathJax support -- Nemeth only at this time, with plans to add </p>
+        <p>How to write Braille from a computer</p>
+        <p>More resources on writing Braille</p>
+        <p>MathML to Braille Duxbury</p>
+        <p>LaTeX to Braille: DBT</p>
+        <p>screen readers have built-in Braille output that may need to be individually configured.
+          some informaition at: https://nemeth.aphtech.org/instructions</p>
+          
         <h1>Nemeth Braille</h1>
-        <p>The <a href="http://www.brailleauthority.org/mathscience/nemeth1972.pdf" target="_blank">Nemeth Braille Code</a> 
+        <p>The <a href="http://www.brailleauthority.org/mathscience/nemeth1972.pdf" target="_blank">Nemeth Braille
+            Code</a>
           was created in 1946 by Dr. Abraham Nemeth to represent
           mathematical expressions and scientific content that was not possible with the
           English Braille American Edition (<abbr>EBAE</abbr>) literary Braille system alone.
           Nemeth Braille uses a 6-dot Braille cell, the same as literary Braille, with a mix
-          of its own unique symbols and standard EBAE. To avoid confusion, Nemeth expressions are 
-          embedded in literary Braille between special opening and closing symbols 
-          (called <em>Nemeth Indicators</em>) that inform the reader when a mathematical or 
+          of its own unique symbols and standard EBAE. To avoid confusion, Nemeth expressions are
+          embedded in literary Braille between special opening and closing symbols
+          (called <em>Nemeth Indicators</em>) that inform the reader when a mathematical or
           scientific expression begins and ends.</p>.
-        <p>Nemeth Braille was officially adopted by the Braille Authority of North America 
+        <p>Nemeth Braille was officially adopted by the Braille Authority of North America
           (<abbr>BANA</abbr>) in 1952, last revised in 1972, and has been consistenly updated to
           represent modern mathematics, chemical equations, and other scientific disciplines.</p>
         <p>More recently, <a href="http://www.dotlessbraille.org/nubs.htm" target="_blank">the Nemeth Uniform Braille
             System</a> (<abbr>NUBS</abbr>) was proposed to better unify Nemeth Braille with literary Braille.</p>
         <p>Nemeth transcription for readers: </p>
         <h1><abbr>UEB</abbr></h1>
-        <p><a href="http://www.brailleauthority.org/ueb.html" target="_blank">Unified English Braille</a> (<abbr>UEB</abbr>) 
-          is an overhaul of English Braille American Edition literary system to modernize and unify literary, 
-          mathematical, and scientific content under one standard, and improve translation 
-          between printed text and Braille.  UEB was officially adopted by <abbr>BANA</abbr> in 2012.
-          UEB uses a different convention for mathematics than Nemeth Braille.  Since the prevalence and
-          success of Nemeth Braille, UEB was updated in 2015 to allow readers to more easily work with their 
+        <p><a href="http://www.brailleauthority.org/ueb.html" target="_blank">Unified English Braille</a>
+          (<abbr>UEB</abbr>)
+          is an overhaul of English Braille American Edition literary system to modernize and unify literary,
+          mathematical, and scientific content under one standard, and improve translation
+          between printed text and Braille. UEB was officially adopted by <abbr>BANA</abbr> in 2012.
+          UEB uses a different convention for mathematics than Nemeth Braille. Since the prevalence and
+          success of Nemeth Braille, UEB was updated in 2015 to allow readers to more easily work with their
           preferred convention.</p>
-          <p>UEB transcription for readers:</p>
-          <h1>GS8</h1>
-          <p>GS8 -- Gardner-Salinas; developed by John Gardner and Norberto Salinas. owned by dCode</p>
-        <p>Syntax based on LaTeX markup</p>
-        <p>Uses 8-dot cells, supported by Unicode; Matches standard Braille </p>
-        <p>encoder/decoder: https://www.dcode.fr/gs8-braille-code</p>
+        <p>UEB transcription for readers:</p>
+        <h1>GS8</h1>
+        <p><a href="https://web.archive.org/web/20120219024932/http://dots.physics.orst.edu/gs.html"
+            target="_blank">GS8</a> Braille is named after its two creators, physicist
+          <a href="https://www.rehab.research.va.gov/jour/06/43/4/gardner.html" target="_blank">John Gardner</a>
+          and mathematician Norberto Salinas. It was developed to directly mirror LaTeX markup with Braille
+          symbols. It uses an 8-dot Braille cell to accommodate a large set of base symbols from which the
+          many thousands of mathematical and scientific symbols available in LaTeX can be constructed, and it
+          is meant to be extensible. GS8 is not in wide use, but may be preferable to those authoring in
+          LaTeX. dCode offers an online <a href="https://www.dcode.fr/gs8-braille-code" target="_blank">GS8
+            encoder/decoder</a>.
+        </p>
+        <p>Dr. Gardner pioneered a method to display data and graphs using Braille.</p>
+
         <h1>DotsPlus</h1>
-        <p><a href="" target="_blank">DotsPlus</a> is a two-dimensional Braille system designed much
-          more as a tactile font that mimics a written symbol. It was designed as a means for educators
+        <p><a href="https://www.washington.edu/doit/what-dotsplus-braille" target="_blank">DotsPlus</a> is a 
+          two-dimensional Braille system designed more as a tactile font that mimics a written symbol. It was 
+          designed as a means for educators
           to present mathematics or other scientific content to blind users without having to learn Braille.
           It can be authored with MathType or other MathML generators and then output using the DotsPlus
           font from a computer. </p>
         <p>Braille Fonts: Ascii Braille, Dotless Braille: http://www.dotlessbraille.org/index.html </p>
-        <p>MathML to Braille Duxbury, </p>
-        <p>LaTeX to Braille: DBT</p>
-        <p>screen readers have built-in Braille output that may need to be individually configured.
-          some informaition at: https://nemeth.aphtech.org/instructions
-        </p>
+        
       </article>
     </section>
     <section class="main-section" id="topic_5">
