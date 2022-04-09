@@ -1,10 +1,10 @@
 :root {
     --navbar-width: 300px;
-    --text-color: rgba(255, 255, 255, 0.868);
+    --text-color: rgb(222, 222, 222);
   }
 
 html {
-    background-color: black;
+    background-color: rgb(25, 28, 26);
     color: var(--text-color);
     width: 100%;
     margin: 0;
@@ -12,6 +12,7 @@ html {
     font-family: Nunito, Sanchez, Roboto, Georgia, sans-serif;
     font-size: 1.5rem;
     line-height: 2rem;
+    letter-spacing: normal;
   }
   
   a {
@@ -162,7 +163,7 @@ html {
     }
   }
   
-  @media only screen and (max-width: 307px) {
+  @media only screen and (max-width: 300px) {
     header {
     }
   
