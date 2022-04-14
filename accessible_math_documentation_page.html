@@ -9,6 +9,26 @@
   <link rel="stylesheet" href="styles.css">
 
   <title>Accessible Mathematics</title>
+
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\[', '\]']]
+      }
+    };
+    MathJax.Hub.Config({
+      "HTML-CSS": {
+        webFont: "Tex"
+      }
+    });
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+  <!-- 
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+    type="text/javascript"></script> 
+  -->
 </head>
 
 <body>
@@ -26,7 +46,7 @@
       <li> <a href="#topic_2a" class="nav-link">Typesetting Software</a></li>
       <li> <a href="#topic_2b" class="nav-link">Web Display Engines</a></li>
       <li> <a href="#topic_2c" class="nav-link">Conversion Tools</a></li>
-      <li> <a href="#topic_2d" class="nav-link">Tagged PDF</a></li>
+      <li> <a href="#tagged_pdf" class="nav-link">Tagged PDF</a></li>
       <li> <a href="#topic_3" class="nav-link">Screen Readers</a></li>
       <li> <a href="#topic_4" class="nav-link">Braille</a></li>
       <li> <a href="#topic_5" class="nav-link">E-book Formats</a></li>
@@ -55,14 +75,17 @@
           require more grammatical rules. Furthermore, the same mathematical notation can have entirely different
           meanings based on the context. Software tools need a robust, context based semantic breakdown of mathematical
           expressions to properly translate them into non-visual formats.</p>
-        <p>HyperText Markup Language (<abbr>HTML</abbr>) is the worldwide semantics-based, cross-platform, device-independent authoring standard.  Math<abbr>ML</abbr> is the extension of <abbr>HTML</abbr> to accommodate
+        <p>HyperText Markup Language (<abbr>HTML</abbr>) is the worldwide semantics-based, cross-platform,
+          device-independent authoring standard. Math<abbr>ML</abbr> is the extension of <abbr>HTML</abbr> to
+          accommodate
           mathematics. However, Math<abbr>ML</abbr> syntax is generally too verbose to be coded by hand, making it
           tenuous for authoring research, textbooks, and other long-format mathematics.
         </p>
         <p>LaTeX is the worldwide standard markup language for authoring mathematics due to its concise, contextual
           syntax and huge library of extensions. But the LaTeX typesetting engine is designed for print, which strips
           away the contextual information needed for screen readers.</p>
-        <p>Portable Document Format (<abbr>PDF</abbr>) is the universal open document standard for print adopted by the International Organization
+        <p>Portable Document Format (<abbr>PDF</abbr>) is the universal open document standard for print adopted by the
+          International Organization
           for Standardization (<abbr>ISO</abbr>). Tagged PDF is a version of PDF that incorporates a semantic structure
           similar to <abbr>HTML</abbr>, offering an ideal solution for accessible mathematics if math markup could
           be ported into the underlying semantics. This has not yet been standardized.</p>
@@ -142,7 +165,8 @@
         <p>AsciiMath is a math markup language for a small set of the most commonly used mathematical symbols. The
           syntax for a symbol is meant to mimic the symbol it represents, similar in spirit to emotive
           <abbr>ASCII</abbr> expressions that predate modern emoticons. It shares some similarity with basic LaTeX
-          markup. </p>
+          markup.
+        </p>
         <h1>Plain Text</h1>
         <p>The Unicode Character Set contains a large collection of mathematical symbols that can be typed in plain
           text, without any special markup. This is only practical for very basic mathematical expressions, as it does
@@ -188,7 +212,8 @@
         <h1>MathML</h1>
         <p>MathML syntax is far more verbose than LaTeX and <abbr>HTML</abbr>. Consequently, most authors use a
           <abbr>GUI</abbr> editor instead of coding MathML directly. Please see the <a href="">Code Examples</a> section
-          for a comparison of MathML and LaTeX code. </p>
+          for a comparison of MathML and LaTeX code.
+        </p>
         <p>Popular MathML <abbr>GUI</abbr> editors:</p>
         <ol>
           <li>Wiris MathType -- standalone or as a part of various Office Suites and Learning Management Systems (all
@@ -385,69 +410,95 @@
           does not provide alt-text, an author can insert alt-text for all necessary components.</p>
       </article>
     </section>
-    <section class="main-section" id="topic_2d">
+    <section class="main-section" id="tagged_pdf">
       <header>Tagged PDF</header>
       <article>
-        <p>Tagged PDF is a semantically enriched PDF that provides meta document information
-          and navigation structure for assistive technology. The
-          <a href="https://accessible-docs.com/overview-pdf-ua-standard/" target="_blank">PDF
-            for Universal Accessibility</a> (<abbr>PDF/UA</abbr>) standard,
-          established in 2012, specifies the requirements for a PDF to be fully accessible compliant.
+        <p>
+          Tagged PDF is a semantically enriched PDF that provides meta document information and navigation structure for assistive technology. The <a href="https://accessible-docs.com/overview-pdf-ua-standard/" target="_blank">PDF
+          for Universal Accessibility</a> (<abbr>PDF/UA</abbr>) standard, established in 2012, specifies the requirements for a PDF to be fully accessible compliant.
         </p>
-        <p>Tagged PDF documents can be created from source documents with <a href="https://www.washington.edu/accessibility/documents/pdf-word/" target="_blank">Microsoft Word</a>, <a href="https://collegeofthedesert.instructure.com/courses/11049/files/198018/" target="_blank">OpenOffice Writer</a>, <a href="https://helpx.adobe.com/indesign/using/structuring-pdfs.html" target="_blank">Adobe InDesign</a>, and other Adobe products.  Adobe Acrobat Pro can create and edit tags in any PDF document, and various other PDF editing software (<a href="https://www.foxit.com/solution/accessibility/" target="_blank">Foxit</a>, <a href="https://equidox.co" target="_blank">Equidox</a>, <a href="https://commonlook.com/about/" target="_blank">CommonLook</a>) provide tagging and PDF accessibility services.</p>
-        <p><a href="https://helpx.adobe.com/acrobat/using/creating-accessible-pdfs.html">Adobe Acrobat documentation</a> provides an overview of creating accessible PDFs.  A shorter introduction is available at <a href="https://webaim.org/techniques/acrobat/" target="_blank">WebAIM</a>.</p>
-        <p>Since much of mathematics is written and formatted for print by PDF, Tagged PDF is an ideal medium for accessible mathematics.  However, Tagged PDF cannot yet parse math markup for screen readers.  There is a <span class="inline-code">&lt;formula&gt;</span> tag to denote mathematical expressions, and Adobe <a href="https://twitter.com/raymondcamden/status/1511453103178006532?s=20&t=Pw_Xehqv5XFpA0pMrlwaBw" target="_blank">advises using an SVG image</a> of the mathematical expression with alt-text for accessibility at this time.</p>
-          
-        <p>There are independent efforts underway to provide Tagged PDF with a robust semantic structure for mathematics:</p>
-
-        <h1>Latex 3 Projects</h1>
-        <p>TUG articles:
-
-          Ross Moore: https://researchers.mq.edu.au/en/persons/ross-moore
-          pdfx package: https://mirror.mwt.me/ctan/macros/latex/contrib/pdfx/pdfx.pdf
-          2020: https://tug.org/TUGboat/tb41-2/tb128moore-tagging1.pdf
-          2013: tagged mathematics accessible pdf: http://ceur-ws.org/Vol-1010/paper-01.pdf
-          
-
-          Latex 3 project
-          list of articles: https://www.latex-project.org/publications/indexbytopic/pdf/
-          creating accessible pdfs: https://tug.org/TUGboat/tb41-1/tb127fischer-accessible.pdf
-          tagpdf package (Ulrike Fischer): https://ctan.math.washington.edu/tex-archive/macros/latex/contrib/tagpdf/tagpdf.pdf
-          blueprint for tagged pdf: https://www.latex-project.org/publications/2020-FMi-TUB-tb129mitt-tagpdf.pdf
-
-
+        <p>
+          <a href="https://helpx.adobe.com/acrobat/using/creating-accessible-pdfs.html">Adobe Acrobat documentation</a>
+          provides an overview of creating accessible PDFs. A shorter introduction is available at <a
+            href="https://webaim.org/techniques/acrobat/" target="_blank">WebAIM</a>.
         </p>
+        <p>Since much of mathematics is written and formatted for print by PDF, Tagged PDF is an ideal candidate for
+          accessible mathematics. At this time, however, Tagged PDF does not officially support mathematics markup. There is a
+          <span class="inline-code">&lt;formula&gt;</span> tag to denote mathematics, and Adobe advises <a
+            href="https://twitter.com/raymondcamden/status/1511453103178006532?s=20&t=Pw_Xehqv5XFpA0pMrlwaBw"
+            target="_blank">using an SVG image</a> of the mathematical expression with alt-text for accessibility.
+        </p>
+        <p>
+          <a href="https://www.washington.edu/accessibility/documents/pdf-word/" target="_blank">Microsoft Word</a>, <a
+          href="https://collegeofthedesert.instructure.com/courses/11049/files/198018/" target="_blank">OpenOffice Writer</a>, <a href="https://helpx.adobe.com/indesign/using/structuring-pdfs.html" target="_blank">Adobe
+          InDesign</a> can embed mathematics in Tagged PDF documents with this method.  Adobe Acrobat Pro can add or edit tags in any PDF document, and various other PDF editors (<a href="https://www.foxit.com/solution/accessibility/" target="_blank">Foxit</a>, <a href="https://equidox.co" target="_blank">Equidox</a>, <a href="https://commonlook.com/about/" target="_blank">CommonLook</a>) also offer accessibility tools.  <a href="https://www.princexml.com/" target="_blank">Prince XML</a> is an HTML to PDF converter that can generate Tagged PDF, as explained in <a
+            href="https://brucelawson.co.uk/2019/making-accessible-tagged-pdfs-with-prince/" target="_blank">Making
+            accessible PDFs with Prince</a> by <a href="https://brucelawson.co.uk/" target="_blank">Bruce Lawson</a>.
+          For a demonstration of Prince XML's output, please see:
+          <ul>
+            <li><a href="https://www.princexml.com/howcome/2016/samples/magic6/magic.xhtml#math" target="_blank">The magic
+                of
+                Prince HTML source page</a></li>
+            <li><a href="https://www.princexml.com/howcome/2016/samples/magic6/magic.pdf" target="_blank">The magic of
+                Prince
+                rendered PDF</a></li>
+          </ul>
+          This document suggests some support for MathML. Prince XML's official documentation does not yet mention it.
+        </p>
+          
+          <p>
+          There are other independent efforts underway to provide Tagged PDF with a robust semantic
+          structure for mathematics with LaTeX, MathML, and AsciiMath markup.
+        </p>
+
+        <h1>LaTeX</h1>
+        <p>The TeX Users Group (<abbr>TUG</abbr>) has been working to incorporate Tagged PDF functionality into LaTeX.
+          Please see:
+        <ul>
+          <li><a href="https://tug.org/TUGboat/tb41-2/tb128moore-tagging1.pdf" target="_blank">Tagging with LaTeX</a> by
+            Ross Moore</li>
+          <li><a href="http://ceur-ws.org/Vol-1010/paper-01.pdf" target="_blank">Tagged Mathematics in PDFs for
+              Accessibility and other purposes</a> by Ross Moore</li>
+          <li><a href="https://tug.org/TUGboat/tb41-1/tb127fischer-accessible.pdf" target="_blank">Creating accessible
+              pdfs with LaTeX</a> by Ulrike Fischer</li>
+          <li><a href="https://www.latex-project.org/publications/2020-FMi-TUB-tb129mitt-tagpdf.pdf"
+              target="_blank">LaTeX Tagged PDF — A blueprint for a large project</a> by Frank Mittelbach and Chris
+            Rowley</li>
+          <li>LaTeX <a href="https://mirror.mwt.me/ctan/macros/latex/contrib/pdfx/pdfx.pdf" target="_blank">pdfx
+              package</a> documentation</li>
+          <li>LaTeX <a href="https://ctan.math.washington.edu/tex-archive/macros/latex/contrib/tagpdf/tagpdf.pdf"
+              target="_blank">tagpdf package</a> documentation</li>
+        </ul>
+        </p>
+
+        <p>More articles are available at <a href="https://researchers.mq.edu.au/en/persons/ross-moore"
+            target="_blank">Ross Moore's website</a> and the <a
+            href="https://www.latex-project.org/publications/indexbytopic/pdf/" target="_blank">LaTeX Project
+            website</a>.</p>
 
         <h1>MathML</h1>
-        In Design + MoveMen --> MathML
-        https://movemen.com/reader/index.html
-        MadeToTag plugin by Axaio software: https://www.axaio.com/doku.php/.en:news:2020-07-27
+        <p><a href="https://movemen.com/index.html" target="_blank">MathTools for InDesign</a> by MoveMen (not to be
+          confused with the <a href="https://ctan.org/pkg/mathtools?lang=en" target="_blank">mathtools package</a> for
+          LaTeX) is a powerful, commercial plugin for Adobe InDesign that allows seamless embedding of MathML into
+          InDesign. <a href="https://www.axaio.com/doku.php/.en:news:2020-07-27" target="_blank">MadeToTag</a> by Axaio
+          Software is a commercial plugin that builds on MathTools to offer better Tagged PDF and Accessibility support
+          by including the semantic structure of MathML, an improvement over images and alt-text.</p>
 
         <h1>AsciiMath</h1>
-        Metanorma link: https://www.metanorma.org/blog/2021-08-26-pdf-accessibility-for-math-formulas/
-        Written in the AsciiDoc markup language (link: https://docs.asciidoctor.org/)
-        Authoring information: https://www.metanorma.org/author/approach/
-        Similar to the Markdown + Pandoc workflow mentioned earlier
-        Asciidoc + Metanorma's internal XML to output to multiple formats
-
-        Another interesting approach:
-        <p>HTML to PDF wit Prince (Bruce Lawson article reference)</p>
-
+        <p><a href="https://www.metanorma.org/author/approach/" target="_blank">Metanorma</a> is an open-source XML
+          authoring system based on the <a href="https://docs.asciidoctor.org/">Asciidoc</a> markup language. Similar to
+          the Pandoc + Markdown workflow mentioned earlier, Asciidoc + Metanorma's internal XML can output a source file
+          to several formats. Please see their article on <a
+            href="https://www.metanorma.org/blog/2021-08-26-pdf-accessibility-for-math-formulas/"
+            target="_blank">accessibility with mathematics</a>.</p>
       </article>
     </section>
     <section class="main-section" id="topic_3">
       <header>Screen Readers</header>
       <article>
-        <p>"Screen readers are software programs that allow blind or visually impaired users to read the text that is
-          displayed on the computer screen with a speech synthesizer or braille display." Taken from AFB page:</p>
-        American Foundation for the Blind (<abbr>AFB</abbr>) has an <a
-          href="https://www.afb.org/blindness-and-low-vision/using-technology/assistive-technology-products/screen-readers">extensive
-          list of screen readers</a>.
-        </p>
-        <p>Screen reader hardware vs. Screen reader software.</p>
-        <p>Demonstration video.</p>
-        <p>Function: announces structure of a web page and reads the content aloud.</p>
-        <p>ARIA roles specifically meant to provide additional contextual information: link</p>
+        <p>A screen reader is a software program that translates text from a computer screen into speech audio or
+          braille. When documents are created with full accessibility support, a screen reader announces the structure of the
+          document before reading the content aloud.</p>
         <p>Popular Screen Readers:
         <ol>
           <li>VoiceOver - Apple</li>
@@ -457,11 +508,130 @@
           <li>Orca - Linux</li>
           <li>Narrator - Windows</li>
         </ol>
-        <p>Application to mathematics -- reader informs user of a mathematical container.</p>
-        <p>Mathematical expressions can be read literally or contextually (examples: functions, vectors)</p>
+        </p>
+        <p>
+          The American Foundation for the Blind (<abbr>AFB</abbr>) maintains an <a href="https://www.afb.org/blindness-and-low-vision/using-technology/assistive-technology-products/screen-readers">extensive list of screen readers</a>. Screen readers are most commonly controlled with keyboards or a Refreshable Braille Display, but can be used with any computer input device.
+        </p>
+        <p>
+          You may wish to view:
+          <ul>
+            <li>A <a href="https://www.youtube.com/watch?v=dEbl5jvLKGQ" target="_blank">screen reader demonstration
+              video</a> by Mark Sutton
+            </li>
+            <li>
+              An <a href="https://www.youtube.com/watch?v=9_K5-4ngDtE" target="_blank">overview of JAWS, NVDA, and VoiceOver</a> by <a href="https://challengesolutions.org/" target="_blank">Challenge Solutions</a>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Screen readers convey mathematics through alt-text representations of mathematical expressions.  The alt-text description is at the heart of accessible mathematics.  Like markup, it has a dual objective: convey how the mathematical expression is written (the presentation) and what it is meant to represent (the content).
+        </p>
+        <p>
+          Alt-text can be provided by:          
+          <ol>
+            <li>The author</li>
+            <li>An <a href="https://developer.mozilla.org/en-US/docs/Web/MathML/Element/semantics" target="_blank">encoding library</a>, a database of semantic meanings of mathematical symbols, such as <a href="https://openmath.org/" target="_blank">OpenMath</a></li>
+            <li>A <a href="#speech_engines">mathematics speech engine</a>, a software generated translation of the mathematical markup</li>
+          </ol>
+          Alt-text can be included in:
+          <ol>
+            <li>Plain text surrounding the mathematical expression</li>
+            <li>The <span class="inline-code">alt</span> property in an <a href="https://stackoverflow.com/a/68642955" target="_blank">image of the mathematical expression</a></li>            
+            <li>The <span class="inline-code">&lt;math&gt;</span> tag in a <a href="https://jats.nlm.nih.gov/archiving/tag-library/1.1d1/n-chc2.html" target="_blank">MathML expression</a></li>
+            <li>
+              An <span class="inline-code">aria-label</span> property in a <a href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6" target="_blank">container around the mathematical content</a>
+            </li>
+          </ol>
+        </p>
+
+        <h1 id="speech_engines">Mathematics Speech Engines</h1>
         <p>Mathematics Speech Rule Engine (Volker Sorge, Javascript)</p>
+          
+        - Originally part of the ChromeVox Screen Reader, an extension for the Chrome browser
+          
+        - Semantic tree visualizer shows how SRE parses math markup to generate alt-text
+          
+        - Different versions of alt-text -- technical (math) and 'plain words' (clearspeak)
+          
         <p>MathSpeak (Abraham Nemeth)</p>
-        <p>MathPlayer (Wiris - no longer updated)</p>
+             
+        - Commercial software from <a href="https://www.seewritehear.com/learn/mathspeak-and-mathspeak-rules/" target="_blank">SeeWriteHear</a>, accessibility services provider.
+
+        - Based on Nemeth Braille rules; <a href="https://accessinghigherground.org/handouts2013/HTCTU%20Alt%20Format%20Manuals/Math%20Accommodations/07%20MATHSPEAK.pdf"
+          target="_blank">Dr. Nemeth's introduction</a>
+        
+        <p>
+          MathPlayer (Wiris - no longer updated); <a href="https://nsoiffer.github.io/MathCAT/" target="_blank">MathCAT</a> replaced (Neil Soiffer)
+        </p>
+
+        <h1>Examples of Math with Screen Readers</h1>
+        <ol>
+          <li>
+              <p>
+                In plain text, a screen reader will convey the fraction 1/3 as "one slash three". In math mode, presented as $\frac{1}{3}$, it may be expressed as "one third", "1 over 3", or "1 divided by 3".
+                </p>
+            </li>
+          <li>
+            <p>
+              We may express this fraction differently in an exponent, such as $x^{1/3}$. This is called "the cube root of x" as much as it is "x to the one third power".  A screen reader may convey it as "x superscript one slash three", "x to the power of 1 divided by three", or any number of variants.
+              </p>
+            </li>
+          <li>
+              <p>
+                The mathematical notation $| \phantom{x} |$ can have several meanings:
+              </p>
+              <ul id=>
+                <li>The absolute value of a number: $|x|$</li>
+                <li>The norm of a vector: $|\mathbf{x}|$</li>
+                <li>The order of an element: $|x|$</li>
+                <li>The cardinality of a set: $|X|$</li>
+                <li>The determinant of a matrix: $|X|$</li>
+              </ul>
+              <p>
+                The math markup for this particular symbol is the same as the symbol itself:  two vertical bars <span class="inline-code">||</span> around the interior content.  An alternative approach is to use semantic expressions:
+              </p>
+              <ul>
+                <li>The absolute value of a number: <span class="inline-code">abs(x)</span></li>
+                <li>The norm of a vector: <span class="inline-code">norm(vec(x))</span></li>
+                <li>The order of an element: <span class="inline-code">ord(x)</span></li>
+                <li>The cardinality of a set: <span class="inline-code">card((set(X))</span></li>
+                <li>The determinant of a matrix: <span class="inline-code">det(matrix(X))</span></li>
+              </ul>
+              <p>This is the idea behind Content MathML and (generally) LaTeX markup.  Content MathML is not natively supported in browsers yet. Translations from LaTeX markup is still ongoing.  Please see the <a href="#tagged_pdf">Tagged PDF</a> section for more information.</p>
+            </li>
+          </ol>
+
+        
+        <p>
+          Comparatively, a sighted reader can scan elements in a syntactic expression, compare them
+          each against a text description, and then process the full semantic meaning. Screen reader users cannot yet
+          navigate both in tandem. Providing the same synchronous behavior for screen reader users is an ongoing, active area of
+          research.
+        </p>
+
+        <p>
+          The more difficult issue is the standardization of translation of mathematical expressions. Mathematics is conveyed differently among different people, and there is no single ideal method.
+        </p>
+        
+        <p>
+          Several examples provided at https://mathml-refresh.github.io/discussion-papers/semantics-mini.
+                    
+          The Speech Engines mentioned above are constantly evolving, and 
+               
+          The <a href="https://www.w3.org/Math/" target="_blank">W3C MathML group</a> is revising methods for default and user-generated alt-text descriptions.
+          
+          discussion: https://lists.w3.org/Archives/Public/www-math/2021Dec/0001.html
+          aria experiment: https://hackmd.io/@dginev/SkBHsZTiO
+        </p>
+        <p>
+          MathML warning against aria labels (Daisy -- outdated?)
+        </p>
+        <p>As MathML is still not natively supported in all browsers (most notably, <a
+            href="https://chromestatus.com/feature/5240822173794304" target="_blank">Chrome</a>), MathJax is currently the
+          best option for cross-platform compatibility.
+        
+          MathJax uses SRE, which provides alt-text through aria
+        </p>
       </article>
     </section>
     <section class="main-section" id="topic_4">
@@ -637,8 +807,10 @@
         </ol>
       </article>
     </section>
-    <footer>
-      <p style="text-align: right;"><a href="#top">Back to top of page</a>
+    <footer style="margin-bottom: 5%;">
+      <p>
+        <span style="float:left;">Copyright &copy; 2022 Abbas Jaffary</span>
+        <span style="float:right;"><a href="#top">Back to top of page</a></span>
       </p>
     </footer>
 
