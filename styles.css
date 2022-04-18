@@ -1,6 +1,6 @@
 :root {
     --navbar-width: 300px;
-    --text-color: rgba(255, 230, 186, 0.895);
+    --text-color: rgba(255, 238, 209, 0.895);
   }
 
 html {
@@ -9,7 +9,7 @@ html {
     width: 100%;
     margin: 0;
     padding: 0;
-    font-family: Nunito, Sanchez, Roboto, Georgia, sans-serif;
+    font-family: Nunito, Sanchez, Roboto, Arial, Georgia, sans-serif;
     font-size: 1.5rem;
     line-height: 2rem;
     letter-spacing: normal;
