@@ -244,7 +244,7 @@
             Project</a> website. </p>
         <h1>MathML</h1>
         <p> 
-          MathML can be coded in any editor just like HTML.  Most authors prefer to use a <abbr>GUI</abbr> editor rather than code MathML directly.  To see why, please see the <a href="">Code Examples</a> section for a comparison of MathML and LaTeX.</p>
+          MathML can be coded in any editor just like HTML.  Most authors prefer to use a <abbr>GUI</abbr> editor rather than code MathML directly.  To see why, please see the <a href="#code_examples">Code Examples</a> section for a comparison of MathML and LaTeX.</p>
         <p>Popular MathML <abbr>GUI</abbr> editors:</p>
         <ol>
           <li>Wiris <a href="https://www.wiris.com/en/mathtype/" target="_blank">MathType</a> -- standalone, or as a plug-in to commercial word processing software such as <a href="https://support.microsoft.com/en-us/office/insert-mathematical-symbols-91a4b04c-84a8-4de9-bd13-8609e14bed58" target="_blank">Microsoft Word</a></li>
@@ -282,10 +282,9 @@
     <section class="main-section" id="web_display_engines">
       <header>Web Display Engines</header>
       <article>
-        <p>LaTeX is widely adopted and efficient to code, but does not yet provide a navigable document structure to
-          assistive technology. MathML provides this structure, but it is inefficient to code and not supported in some
-          browsers. To bridge this gap, there are JavaScript tools that convert LaTeX markup to MathML and
-          display the MathML in a browser:</p>
+        <p>
+          LaTeX is widely adopted and efficient to code, but does not yet provide a navigable document structure to assistive technology. MathML provides this structure, but it is much longer to code and not supported in some browsers. To bridge this gap, there are JavaScript tools that convert LaTeX markup to MathML and display the MathML in a browser:
+        </p>
         <ol>
           <li>MathJax</li>
           <li>KaTeX</li>
@@ -293,9 +292,9 @@
           <li>MathQuill</li>
           <li>Latex.css</li>
         </ol>
-        <p>These tools aim to provide a "best of both worlds" approach, where assistive technology can navigate MathML
-          just as easily as <abbr>HTML</abbr>, while the underlying LaTeX markup can be translated to screen reader and
-          Braille output. Each varies in its scope, method of application, and accessibility support.</p>
+        <p>
+          These tools aim to provide a "best of both worlds" approach, where assistive technology can navigate MathML just as easily as <abbr>HTML</abbr>, while the underlying LaTeX markup can be translated to screen reader and Braille output. Each varies in its scope, method of application, and accessibility support.
+        </p>
         <h1>MathJax</h1>
         <p><a href="https://www.mathjax.org/" target="_blank">MathJax</a> is the most popular method to render
           mathematics on the web. The MathJax engine searches an <abbr>HTML</abbr> document for mathematics markup
@@ -389,7 +388,7 @@
           document editing software. See, for example, the entry on <a href="#r_markdown">R Markdown</a> below.</p>
         <p>LaTeX markup can be included in a Markdown document by enclosing the LaTeX code between math mode delimiters,
           just as in an <abbr>HTML</abbr> document. Then, the entire Markdown document can be converted to
-          <abbr>HTML</abbr> by a popular tool called Pandoc. This process is described below.
+          <abbr>HTML</abbr> by a popular tool called Pandoc. This process is described below.  Sample code is provided in the <a href="#code_examples">Code Examples</a> section.
         </p>
 
         <h1>Pandoc</h1>
@@ -397,7 +396,9 @@
           document converter" capable of parsing and converting between hundreds of file formats. It is run from a
           command line interface (<abbr>CLI</abbr>) by specifying the to- and from- formats along with any special
           options available to those formats.</p>
-          <p>(Pandoc Code Example)</p>
+          <p><code>
+            pandoc --mathjax -f markdown -t html -s source_filename.md -o output_filename.html
+          </code></p>
         <p>Pandoc can call MathJax (or another engine) to render mathematics when it converts a document
           to <abbr>HTML</abbr>. The resulting <abbr>HTML</abbr> file will have MathJax automatically set up in the <span
             class="inline-code">script</span> section, and can work as a template for future use.</p>
@@ -416,13 +417,13 @@
           to add some custom <abbr>CSS</abbr> to the final <abbr>HTML</abbr> output, can convert documents written with
           <a href="#r_markdown">R Markdown</a> and <a href="https://www.overleaf.com/" target="_blank">Overleaf</a>, and has other unique features.</p>
         <h1>LaTeXML</h1>
-        <p><a href="https://math.nist.gov/~BMiller/LaTeXML/">LaTeXML</a> was developed to convert LaTeX markup to an
-          internal <abbr>XML</abbr> format specifically for the <a href="https://dlmf.nist.gov/" target="_blank">Digital
-            Library of Mathematical Functions</a> (<abbr>DLMF</abbr>) project at the <a href="https://www.nist.gov/"
-            target="_blank">National Institute of Standards and Technology</a> (<abbr>NIST</abbr>). In turn, the
-          internal <abbr>XML</abbr> could be used to export to <abbr>HTML</abbr>, with various customizable settings. It
-          also uses MathJax to render mathematics. The LaTeXML site has a sample web editor that converts user input to
-          rendered <abbr>HTML</abbr>, and offers numerous built-in examples.</p>
+        <p>
+          <a href="https://math.nist.gov/~BMiller/LaTeXML/">LaTeXML</a> was developed to convert LaTeX markup to an
+          internal <abbr>XML</abbr> format specifically for the <a href="https://dlmf.nist.gov/" target="_blank">Digital Library of Mathematical Functions</a> (<abbr>DLMF</abbr>) project at the <a href="https://www.nist.gov/" target="_blank">National Institute of Standards and Technology</a> (<abbr>NIST</abbr>). In turn, the
+          internal <abbr>XML</abbr> can be used to export to <abbr>HTML</abbr>, with various customizable settings. It
+          also uses MathJax to render mathematics. LaTeXML offers a <a href="https://latexml.mathweb.org/editor" target="_blank">sample web editor</a> that converts user input to rendered <abbr>HTML</abbr>, with numerous built-in examples.
+        </p>
+        <p>arXiv demo w/LaTeXML: https://ar5iv.labs.arxiv.org</p>
         <h1>LaTeX.js</h1>
         <p><a href="https://latex.js.org/" target="_blank">LaTeX.js</a> is an interesting engine that ports full LaTeX
           documents into <abbr>HTML</abbr> while also reproducing their original LaTeX style formatting, similar to
@@ -706,7 +707,7 @@
           Braille can also be written through software translation of standard text. Two major systems are:
           <ul>
             <li>
-              <a href="https://www.brailleblaster.org/" target="_blank">BrailleBlaster</a>, a free, open-source editor based on the <a href="http://liblouis.org/" target="_blank">Liblouis</a> translation engine. BrailleBlaster has support for LaTeX, and can convert to HTML using <a href="#tex4ht">TeX4ht</a>. Please read the <a href="https://www.brailleblaster.org/faq.php" target="_blank">BrailleBlaster FAQ</a> and <a href="https://www.brailleblaster.org/docs/" target="_blank">BrailleBlaster documentation</a> for details.
+              <a href="https://www.brailleblaster.org/" target="_blank">BrailleBlaster</a>, a free, open-source editor based on the <a href="http://liblouis.org/" target="_blank">Liblouis</a> translation engine. BrailleBlaster has support for LaTeX, and can convert to HTML using <a href="#tex4ht">TeX4ht</a>.
             </li>
             <li>
               <a href="https://www.duxburysystems.com/default.asp" target="_blank">Duxbury Braille Translator</a> (DBT) by Duxbury Systems is a commercial software translator with full support for MathML, LaTeX, and translation for over 170 languages.  Please see the <a href="https://www.duxburysystems.com/documentation/dbt12.5/mathematics/mathematics.htm" target="_blank">DBT mathematics documentation</a> page for all the support options for math.
@@ -714,19 +715,22 @@
           </ul>
         </p>
         <p>
-          Wiris MathType <a href="https://docs.wiris.com/mathtype/en/mathtype-office-tools/mathtype-7-for-windows-and-mac/using-mathtype-with-other-applications-and-websites/using-mathtype-with-duxbury-braille-translator.html" target="_blank">works with DBT</a> to offer Braille output capability in Microsoft Word.
+          Other resources for typesetting math in Braille:
+          <ul>
+            <li>
+              MathJax offers <a href="https://docs.mathjax.org/en/latest/basic/a11y-extensions.html" target="_blank">Nemeth Braille output</a>
+            </li>
+            <li>
+              Wiris MathType <a href="https://docs.wiris.com/mathtype/en/mathtype-office-tools/mathtype-7-for-windows-and-mac/ using-mathtype-with-other-applications-and-websites/using-mathtype-with-duxbury-braille-translator.html" target="_blank">works with DBT</a> to offer Braille output capability in Microsoft Word
+            </li>
+            <li>
+              The <a href="https://www.tug.org/tug2021/assets/pdf/Andreas-Papasalouros-slides.pdf" target="_blank">latex2nemeth package</a> for LaTeX offers translation to Nemeth Braille
+            </li>
+            <li>
+              Martin Jarmar's 2012 thesis <a href="https://is.muni.cz/th/t3e0k/dp.pdf" target="_blank">Conversion of Mathematical Documents into Braille</a> details several other software options with accessibility support for mathematics into Braille at the time. Some of the software mentioned is no longer maintained, but may still be in use.
+            </li>
+          </ul>
         </p>
-        <p>
-          MathJax offers <a href="https://docs.mathjax.org/en/latest/basic/a11y-extensions.html" target="_blank">Nemeth
-          Braille output</a>.
-        </p>
-        <p>
-          The <a href="https://www.tug.org/tug2021/assets/pdf/Andreas-Papasalouros-slides.pdf" target="_blank">latex2nemeth
-          package</a> for LaTeX is offers direct translation of LaTeX markup to Nemeth Braille.
-        </p>
-        <p>
-          Martin Jarmar's 2012 thesis <a href="https://is.muni.cz/th/t3e0k/dp.pdf" target="_blank">Conversion of Mathematical Documents into Braille</a> details several other software options with accessibility support for mathematics into Braille at the time.  Some of the software mentioned is no longer maintained, but may still be in use.
-        </p>      
         <p>
           There are many different Braille Fonts.  Please see:
           <ul>
@@ -766,7 +770,7 @@
           <li>Calibre</li>
           <li>DAISY</li>
         </ol>
-          There is a bit more of a learning curve than the typesetting software mentioned earlier in this document, but they significantly ease the entire e-book production process.
+          There may be a bit more of a learning curve to these programs than those mentioned in the <a href="#typesetting_software">Typesetting Software</a> section, but these programs significantly ease the entire e-book production process.
         </p>
         <h1>PreTeXt</h1>
         <p>
@@ -774,8 +778,10 @@
           is an outgrowth of the <a href="https://utmost.aimath.org" target="_blank">Undergraduate Teaching
             in Mathematics with Open Software and Textbooks</a> (<abbr>UTMOST</abbr>) project through the
           <a href="http://aimath.org/" target="_blank">American Institute for Mathematics</a>
-          (<abbr>AIM</abbr>). It was originally designed to freely available open-textbooks on the web, and
-          has grown into a full accessible-friendly document production system. PreTeXt is its own XML that
+          (<abbr>AIM</abbr>). It was originally designed to create freely available open-textbooks on the web, and 
+          has grown into a full accessible-friendly document production system.
+          </p>
+          <p>PreTeXt is its own XML that
           can be exported to HTML, PDF, Jupyter Notebooks, Nemeth Braille (using MathJax), and other formats. For mathematics,
           PreTeXt uses a hybrid of MathML to indicate math mode, LaTeX syntax for mathematics markup, and MathJax for rendering. It can be written in any editor, and it is compiled from a command line interface. An authoring guide, sample files, and several free textbooks written with PreTeXt are all available on the <a href="https://pretextbook.org" target="_blank">PreTeXt website</a>.
         </p>
@@ -835,7 +841,6 @@
             for Universal Accessibility</a> (<abbr>PDF/UA</abbr>) standard, established in 2012, specifies the
           requirements for a PDF to be fully accessible compliant. A short introduction is available at <a
             href="https://webaim.org/techniques/acrobat/" target="_blank">WebAIM</a>.
-
         </p>
         <p>Since much of mathematics is written and formatted for print by PDF, Tagged PDF is an ideal candidate for
           accessible mathematics, alternative to HTML. At this time, however, Tagged PDF does not officially support
@@ -943,73 +948,182 @@
     <section class="main-section" id="code_examples">
       <header>Code Examples</header>
       <article>
-        <code>LaTeX Example (formulas table)</code>
-        <code>MathML Example (MathJax formulas table)</code>
-        <code>Markdown Example</code>
-        <code>Pandoc Conversion Example</code>
-        <code>LaTeXML Conversion example</code>
-        <code>MathJax Script Loader example</code>
-        <code><abbr>HTML</abbr> page with LaTeX math Example</code>
-        <h1>Examples of Math with Screen Readers</h1>
-        <ol>
-          <li>
-            <p>
-              In plain text, a screen reader will convey the fraction 1/3 as "one slash three". In math mode, presented
-              as
-              $1/3$, or $\frac{1}{3}$, it may be expressed as "one third", "1 over 3", or "1 divided by 3".
-            </p>
-          </li>
-          <li>
-            <p>
-              We may express this fraction differently in an exponent, such as $x^{1/3}$. This is called "the cube root
-              of x" as
-              much as it is "x to the one third power". A screen reader may convey it as "x superscript one slash
-              three", "x to
-              the power of 1 divided by three", or any number of variants.
-            </p>
-          </li>
-          <li>
-            <p>
-              The mathematical notation $| \phantom{x} |$ can have several meanings:
-            </p>
-            <ul id=>
-              <li>The absolute value of a number: $|x|$</li>
-              <li>The norm of a vector: $|\mathbf{x}|$</li>
-              <li>The order of an element: $|x|$</li>
-              <li>The cardinality of a set: $|X|$</li>
-              <li>The determinant of a matrix: $|X|$</li>
-            </ul>
-            <p>
-              The math markup for this particular symbol is the same as the symbol itself: two vertical bars <span
-                class="inline-code">||</span> around the interior content. An alternative approach is to use semantic
-              expressions:
-            </p>
-            <ul>
-              <li>The absolute value of a number: <span class="inline-code">abs(x)</span></li>
-              <li>The norm of a vector: <span class="inline-code">norm(vec(x))</span></li>
-              <li>The order of an element: <span class="inline-code">ord(x)</span></li>
-              <li>The cardinality of a set: <span class="inline-code">card((set(X))</span></li>
-              <li>The determinant of a matrix: <span class="inline-code">det(matrix(X))</span></li>
-            </ul>
-          </li>
-        </ol>
+        <h1>Fraction</h1>
+        <p>$$\frac{a}{b}$$</p>
+        <p>LaTeX:
+        <code>\frac{a}{b}</code>
+        </p>
+        <p>MathML:
+          <code style="white-space: pre-line"> &lt;math&gt;
+             &nbsp; &lt;mfrac&gt;
+                &nbsp; &nbsp; &lt;mi&gt; a &lt;/mi&gt;
+                &nbsp; &nbsp; &lt;mi&gt; b &lt;/mi>
+              &nbsp; &lt;/mfrac&gt;
+            &lt;/math&gt;
+          </code> 
+        </p>
+        <h1>Geometric Series</h1>
+        <p>$$S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a (1 - r^n)}{1 - r}$$</p>
+        <p>LaTeX:
+          <code>S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a (1 - r^n)}{1 - r}</code>
+        </p>
+        <p>MathML:
+          <code style="white-space: pre-line";> &lt;semantics&gt;
+            &nbsp; &lt;mrow&gt;
+              &nbsp; &nbsp; &lt;msub&gt;
+              &nbsp; &nbsp; &nbsp; &lt;mi&gt;S&lt;/mi&gt;
+              &nbsp; &nbsp; &lt;mi&gt;n&lt;/mi&gt;
+              &nbsp; &nbsp; &lt;/msub&gt;
+              &nbsp; &nbsp; &lt;mo&gt;=&lt;/mo&gt;
+              &nbsp; &nbsp; &lt;munderover&gt;
+              &nbsp; &nbsp; &nbsp; &lt;mo data-mjx-texclass="OP"&gt;&#x2211;&lt;/mo&gt;
+              &nbsp; &nbsp; &nbsp; &lt;mrow data-mjx-texclass="ORD"&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mi&gt;i&lt;/mi&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mo&gt;=&lt;/mo&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mn&gt;1&lt;/mn&gt;
+              &nbsp; &nbsp; &nbsp; &lt;/mrow&gt;
+              &nbsp; &nbsp; &nbsp; &lt;mrow data-mjx-texclass="ORD"&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mi&gt;n&lt;/mi&gt;
+              &nbsp; &nbsp; &nbsp; &lt;/mrow&gt;
+              &nbsp; &nbsp; &lt;/munderover&gt;
+              &nbsp; &nbsp; &lt;mi&gt;a&lt;/mi&gt;
+              &nbsp; &nbsp; &lt;msup&gt;
+              &nbsp; &nbsp; &nbsp; &lt;mi&gt;r&lt;/mi&gt;
+              &nbsp; &nbsp; &nbsp; &lt;mrow data-mjx-texclass="ORD"&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mi&gt;i&lt;/mi&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mo&gt;&#x2212;&lt;/mo&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mn&gt;1&lt;/mn&gt;
+              &nbsp; &nbsp; &nbsp; &lt;/mrow&gt;
+              &nbsp; &nbsp; &lt;/msup&gt;
+              &nbsp; &nbsp; &lt;mo&gt;=&lt;/mo&gt;
+              &nbsp; &nbsp; &lt;mfrac&gt;
+              &nbsp; &nbsp; &nbsp; &lt;mrow&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mi&gt;a&lt;/mi&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mo stretchy="false"&gt;(&lt;/mo&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mn&gt;1&lt;/mn&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mo&gt;&#x2212;&lt;/mo&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;msup&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;mi&gt;r&lt;/mi&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;mi&gt;n&lt;/mi&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;/msup&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mo stretchy="false"&gt;)&lt;/mo&gt;
+              &nbsp; &nbsp; &nbsp; &lt;/mrow&gt;
+              &nbsp; &nbsp; &nbsp; &lt;mrow&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mn&gt;1&lt;/mn&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mo&gt;&#x2212;&lt;/mo&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mi&gt;r&lt;/mi&gt;
+              &nbsp; &nbsp; &nbsp; &lt;/mrow&gt;
+              &nbsp; &nbsp; &lt;/mfrac&gt;
+            &nbsp; &lt;/mrow&gt;
+            &nbsp; &lt;annotation encoding="application/x-tex"&gt;S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a (1 - r^n)}{1 - r}&lt;/annotation&gt;
+          &lt;/semantics&gt;  
+        </code>
+        </p>
+        <h1>Markdown</h1>
+        <p>A Markdown file containing the LaTeX geometric series formula above:
+          <code style="white-space: pre-line";> # Geometric Series
+            
+            $S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a (1 - r^n)}{1 - r}$
+          </code>
+        </p>
+        <h1>Pandoc</h1>
+        <p>A Pandoc conversion of the preceding Markdown file into HTML:
+          <code>
+            pandoc --mathjax -f markdown -t html -s source_filename.md -o output_filename.html
+          </code>
+          This will convert a Markdown file named <span class="inline-code">source_filename.md</span> into an HTML file called <span class="inline-code">output_filename.html</span> that calls MathJax to display the LaTeX code as MathML. The HTML file contains the source LaTeX code:
+          <code style="white-space: pre-line";> &lt;!DOCTYPE html&gt;
+            &lt;html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""&gt;
+            
+            &lt;head&gt;
+              &nbsp; &lt;meta charset="utf-8" /&gt;
+              &nbsp; &lt;meta name="generator" content="pandoc" /&gt;
+              &nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /&gt;
+                          
+              &nbsp; &lt;script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+                type="text/javascript"&gt;
+              &nbsp; &lt;/script&gt;
+              &nbsp; &lt;!--[if lt IE 9]&gt;
+              &nbsp; &lt;script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"&gt;
+              &nbsp; &lt;/script&gt;
+              &nbsp; &lt;![endif]--&gt;
+            &lt;/head&gt;
+
+            &lt;body&gt;
+              &nbsp; &lt;h1&gt;Geometric Series&lt;/h1&gt;
+              &nbsp; $S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a (1 - r^n)}{1 - r}$
+            &lt;/body&gt;
+
+            &lt;/html&gt;
+          </code>
+        </p>
+        <h1>MathJax</h1>
+        <p>MathJax can be configured to use familiar LaTeX delimiters, such as:
+          <code style="white-space: pre-line";> &lt;script&gt;
+              &nbsp; MathJax = {
+              &nbsp; &nbsp; tex: {
+              &nbsp; &nbsp; &nbsp; inlineMath: [['$', '$'], ['\\(', '\\)']],
+              &nbsp; &nbsp; &nbsp; displayMath: [['$$', '$$'], ['\[', '\]']]
+              &nbsp; &nbsp; }
+              &nbsp; };
+              &nbsp; MathJax.Hub.Config({
+              &nbsp; &nbsp; "HTML-CSS": {
+              &nbsp; &nbsp; &nbsp; webFont: "Tex"
+              &nbsp; &nbsp; }
+              &nbsp; });
+            &lt;/script&gt;
+            &lt;script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"&gt;&lt;/script&gt;
+          </code>
+          Many more customization options are explained in <a href="https://docs.mathjax.org/en/latest/web/configuration.html" target="_blank">MathJax Documentation</a>.
+        </p>
+        <h1>LaTeXML</h1>
+        <p>
+          LaTeXML works in two stages.  The first command:
+          <code style="white-space: pre-line" ;> latexml source_filename.tex --dest=filename.xml</code>
+          converts a source TeX file into an XML file.  The second command:          
+          <code style="white-space: pre-line" ;> latexmlpost filename.xml --dest=output_filename.html</code>
+          converts the XML file into an HTML file containing a MathML conversion of the original LaTeX markup.
+        </p>
+        <p>
+          Browsers that do not support MathML will not display the MathML, so SVG output is also available.  LaTeXML will use the underlying LaTeX math markup in the <span class="inline-code">alttext</span> property.  Options and customization is explained in the <a href="https://math.nist.gov/~BMiller/LaTeXML/manual/" target="_blank">LaTeXML manual</a>.         
+        </p>
+        <p>
+          Alternatively, MathJax can be added to the HTML file to display the MathML in all browsers.
+        </p>
       </article>
     </section>
     <section class="main-section" id="additional_links">
-      <header>Additional Links</header>
+      <header>Additional Reading</header>
       <article>
         <ol>
-          <li><a href="" target="_blank"></a>OpenMath</li>
-          <li><a href="" target="_blank"></a>sTeX</li>
-          <li><a href="" target="_blank"></a>Tactile Sign & ASL Math</li>
-          <li>Tex2Word: https://www.chikrii.com/</li>
-          <li>tex2word LaTeX package: https://ctan.org/pkg/tex2word?lang=en</li>
-          <li>ARIA math role: https://www.w3.org/TR/wai-aria-1.2/#math https://github.com/w3c/aria/issues/940</li>
-          <li>arXiv demo w/LaTeXML: </li>
-          <li>DO-IT from University of Washington: https://www.washington.edu/doit/</li>
-          <li>MathML Accessibility Primer: https://mathml-refresh.github.io/discussion-papers/accessibility</li>
-          <li>Conversation with Brian Kardell & Neil Soiffer about the history of math on the web: https://mathml.igalia.com/news/2019/12/03/igalia-chats-with-neil-soiffer-on-mathml/</li>
-          <li>NIMAS: https://www.tug.org/tug2021/assets/pdf/Andreas-Papasalouros-slides.pdf</li>
+          <li>
+            <a href="https://mathml-refresh.github.io/discussion-papers/accessibility" target="_blank">MathML Accessibility Primer</a>
+          </li>
+          <li>
+            <a href="https://mathml.igalia.com/news/2019/12/03/igalia-chats-with-neil-soiffer-on-mathml/"  target="_blank">Conversation with Brian Kardell & Neil Soiffer</a> about the history of math on the web
+          </li>
+          <li>
+            <a href="https://www.washington.edu/doit/" target="_blank">DO-IT from University of Washington</a>
+          </li>
+          <li>
+            <a href="https://www.w3.org/TR/wai-aria-1.2/#math" target="_blank">ARIA math role definition</a>
+            <a href="https://github.com/w3c/aria/issues/940" target="_blank">ARIA math role discussion</a>
+          </li>
+          <li>            
+            <a href="https://aem.cast.org/nimas-nimac/nimas-nimac" target="_blank">National Instructional Materials Accessibility Standard</a> (NIMAS)
+          </li>
+          <li><a href="https://openmath.org/" target="_blank">OpenMath</a></li>
+          <li><a href="https://kwarc.info/systems/sTeX/" target="_blank">sTeX</a></li>
+          <li><a href="https://howard.md.networkofcare.org/veterans/assistive/list.aspx?indexingterms=tactile-aid-math" target="_blank">Tactile Aid for Math</a></li>
+          <li>
+            <a href="https://dcmp.org/media/4489-vocabulary-builders-in-sign-language-math"
+              target="_blank">Sign Language Vocabulary for Math</a> by Jacksonville State University
+          </li>
+          <li><a href="https://www.chikrii.com/" target="_blank">Tex2Word</a></li>
+          <li><a href="https://ctan.org/pkg/tex2word?lang=en" target="_blank">tex2word LaTeX package</a></li>
+          <li>
+            <a href="https://www.ams.org/notices/200210/comm-morin.pdf" target="_blank">The World of Blind Mathematicians</a> (AMS article)            
+          </li>
         </ol>
       </article>
     </section>

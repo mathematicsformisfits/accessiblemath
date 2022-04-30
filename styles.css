@@ -44,13 +44,13 @@ html {
   
   code {
     display: block;
-    margin: 10px;
+    margin: 20px;
     padding: 10px;
     line-height: 1.5;
     font-size: 1rem;
     font-weight: 600;
     color: black;
-    background-color: #bbbbbb;
+    background-color: #f3f3eb;
     border: 0px solid gray;
     border-radius: 5px;
   }
@@ -147,7 +147,14 @@ html {
     /* */
   }
   
-  section {
+  pre {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    white-space: pre;
+  }
+
+      section {
     border-bottom: 1px solid lightgreen;
     margin-bottom: 1.5rem;
   }
@@ -167,7 +174,7 @@ html {
     margin-bottom: 2em;
   }
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 600px) {
     #main-doc {
       margin: 210px auto;
     }
@@ -189,6 +196,8 @@ html {
   
   @media only screen and (max-width: 300px) {
     header {
+      font-size: 1rem;
+      border: 0px solid yellow;
     }
   
     #navbar ul {
