@@ -182,8 +182,8 @@
           <abbr>HTML</abbr> specifically to render mathematics on the
           web. This provides all the benefits of reflowable text on any device, and a direct interface to mathematical
           expressions for search engines, learning management systems, assitive technology such as screen readers, and
-          other web-based applications. There are two versions of MathML: <a href="" target="_blank">Presentation MathML</a>, which
-          encodes information on how to display an equation, and <a href="" target="_blank">Content MathML</a>, which incorporates
+          other web-based applications. There are two versions of MathML: <a href="https://www.w3.org/TR/MathML3/chapter3.html#presm.intro" target="_blank">Presentation MathML</a>, which
+          encodes information on how to display an equation, and <a href="https://www.w3.org/TR/MathML3/chapter4.html#contm.intro " target="_blank">Content MathML</a>, which incorporates
           semantic information about the underlying mathematical expression itself. Please see this <a
             href="https://samdooley.github.io/mathml-docs/intent2cmml/demo.html" target="_blank">MathML demonstration of
             the quadratic formula</a> to compare the difference.  Presentation MathML is primarily what is used today.
@@ -402,10 +402,7 @@
         <p><a href="https://pandoc.org/index.html" target="_blank">Pandoc</a> is an extremely powerful "universal
           document converter" capable of parsing and converting between hundreds of file formats. It is run from a
           command line interface (<abbr>CLI</abbr>) by specifying the to- and from- formats along with any special
-          options available to those formats.</p>
-          <p><code>
-            pandoc --mathjax -f markdown -t html -s source_filename.md -o output_filename.html
-          </code></p>
+          options available to those formats.  An example is provided in the <a href="#pandoc_example">Code Examples</a> section.</p>  
         <p>Pandoc can call MathJax (or another engine) to render mathematics when it converts a document
           to <abbr>HTML</abbr>. The resulting <abbr>HTML</abbr> file will have MathJax automatically set up in the <span
             class="inline-code">script</span> section, and can work as a template for future use.</p>
@@ -651,7 +648,7 @@
         <h1>Nemeth Braille</h1>
         <p>
           The <a href="http://www.brailleauthority.org/mathscience/nemeth1972.pdf" target="_blank">Nemeth Braille Code</a>
-          was created in 1946 by Dr. Abraham Nemeth to represent mathematical expressions and scientific content that was not possible with the English Braille American Edition (<abbr>EBAE</abbr>) literary Braille system alone. Nemeth Braille uses a 6-dot Braille cell, the same as literary Braille, with a mix of its own unique symbols and standard EBAE. Nemeth expressions are embedded in literary Braille between special opening and closing symbols called <em>Nemeth Indicators</em>) that inform the reader when a mathematical or scientific expression begins and ends.
+          was created in 1946 by Dr. Abraham Nemeth to represent mathematical expressions and scientific content that was not possible with the English Braille American Edition (<abbr>EBAE</abbr>) literary Braille system alone. Nemeth Braille uses a 6-dot Braille cell, the same as literary Braille, with a mix of its own unique symbols and standard EBAE. Nemeth expressions are embedded in literary Braille between special opening and closing symbols (called <em>Nemeth Indicators</em>) that inform the reader when a mathematical or scientific expression begins and ends.
         </p>
         <p>
           Nemeth Braille was officially adopted by the Braille Authority of North America (<abbr>BANA</abbr>) in 1952, last revised in 1972, and has been consistenly updated to represent modern mathematics, chemical equations, and other scientific disciplines.
@@ -961,6 +958,20 @@
     <section class="main-section" id="code_examples">
       <header>Code Examples</header>
       <article>
+        <p>
+          Test LaTeX code in a browser at:
+          <ul>
+            <li><a href="https://editor.codecogs.com" target="_blank">Code Cogs Equation Editor</a></li>
+            <li><a href="https://quicklatex.com/" target="_blank">Quick LaTeX</a></li>
+          </ul>
+        </p>
+        <p>
+          Test MathML code in a browser at:
+          <ul>
+            <li><a href="https://www-archive.mozilla.org/projects/mathml/demo/tester" target="_blank">Mozilla MathML Tester</a></li>
+          </ul>
+          Note that the MathML will not display in all browsers.  Check <a href="https://caniuse.com/mathml" target="_blank">Can I Use ?</a> for your browser.
+        </p>
         <h1>Fraction</h1>
         <p>$$\frac{a}{b}$$</p>
         <p>LaTeX:
@@ -976,9 +987,9 @@
           </code> 
         </p>
         <h1>Geometric Series</h1>
-        <p>$$S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a (1 - r^n)}{1 - r}$$</p>
+        <p>$$S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a (1-r^n)}{1-r}$$</p>
         <p>LaTeX:
-          <code>S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a (1 - r^n)}{1 - r}</code>
+          <code>S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a(1-r^n)}{1-r}</code>
         </p>
         <p>MathML:
           <code style="white-space: pre-line";> &lt;math&gt;
@@ -1029,7 +1040,7 @@
               &nbsp; &nbsp; &nbsp; &lt;/mrow&gt;
               &nbsp; &nbsp; &lt;/mfrac&gt;
             &nbsp; &lt;/mrow&gt;
-            &nbsp; &lt;annotation encoding="application/x-tex"&gt;S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a (1 - r^n)}{1 - r}&lt;/annotation&gt;
+            &nbsp; &lt;annotation encoding="application/x-tex"&gt;S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a(1-r^n)}{1-r}&lt;/annotation&gt;
           &lt;/semantics&gt;
           &lt;/math&gt;
         </code>
@@ -1038,11 +1049,11 @@
         <p>A Markdown file containing the LaTeX geometric series formula above:
           <code style="white-space: pre-line";> # Geometric Series
             
-            $$S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a (1 - r^n)}{1 - r}$$
+            $$S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a(1-r^n)}{1-r}$$
           </code>
           Note the double <span class="inline-code">$$</span> delimiters around the math expression.  This will render the equation in display format.  For inline format, use a single <span class="inline-code">$</span> delimiter.  These delimiters are not used by default in MathJax.  Please see the sample <a href="#mathjax_configuration">MathJax Configuration</a> below.
         </p>
-        <h1>Pandoc</h1>
+        <h1 id="pandoc_example">Pandoc</h1>
         <p>A Pandoc conversion of the preceding Markdown file into HTML:
           <code>
             pandoc --mathjax -f markdown -t html -s source_filename.md -o output_filename.html
@@ -1067,7 +1078,7 @@
 
             &lt;body&gt;
               &nbsp; &lt;h1&gt;Geometric Series&lt;/h1&gt;
-              &nbsp; $S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a (1 - r^n)}{1 - r}$
+              &nbsp; $S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a(1-r^n)}{1-r}$
             &lt;/body&gt;
 
             &lt;/html&gt;
