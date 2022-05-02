@@ -153,7 +153,7 @@
     <section class="main-section" id="math_markup_languages">
       <header>Math Markup Languages</header>
       <article>
-        <p>The majority of mathematics today is written in a markup language. Three popular markup languages are: </p>
+        <p>The majority of mathematics today is written in a markup language. The most widely used math markup languages are: </p>
         <ol>
           <li>LaTeX</li>
           <li>MathML</li>
@@ -164,7 +164,7 @@
         <p>The syntax of each markup language serves a dual purpose: to reference mathematical symbols and to determine
           the placement of the symbols. LaTeX was originally designed for print or presentation on a fixed canvas size.
           MathML and AsciiMath were originally designed for the web to accommodate a flexible canvas. An accessible math
-          workflow today uses a blend of both approaches.</p>
+          workflow today may use a blend of both.</p>
         <h1>LaTeX</h1>
         <p>The <a href="https://www.latex-project.org/" target="_blank">LaTeX typesetting system</a> is the most popular
           method for typesetting mathematics. LaTeX is an outgrowth of
@@ -238,10 +238,16 @@
           <li><a href="https://www.lyx.org/" target="_blank">LyX</a> -- Windows, MacOS, Linux, ChromeOS, OS/2, Haiku
           </li>
         </ol>
-        <p>The <a href="https://editor.codecogs.com/" target="_blank">Code-Cogs Online LaTeX Editor</a> is a helpful
-          browser based reference tool for popular LaTeX symbols.</p>
-        <p>More information is available at <a href="https://www.latex-project.org/" target="_blank">The LaTeX
-            Project</a> website. </p>
+        <p>
+          The <a href="https://editor.codecogs.com/" target="_blank">Code-Cogs Online LaTeX Editor</a> is a helpful
+          browser based reference tool for popular LaTeX symbols.
+        </p>
+        <p>
+          More information is available at <a href="https://www.latex-project.org/" target="_blank">The LaTeX Project</a> website. 
+        </p>
+        <p>
+          <a href="https://www.chikrii.com" target="_blank">Chikrii Software</a> offers the Tex2Word and Word2Tex converters for Microsoft Word to read and save documents in <span class="inline-code">tex</span> format. LaTeX formulas are rendered as MathML objects in Word, and vice versa.
+        </p>
         <h1>MathML</h1>
         <p> 
           MathML can be coded in any editor just like HTML.  Most authors prefer to use a <abbr>GUI</abbr> editor rather than code MathML directly.  To see why, please see the <a href="#code_examples">Code Examples</a> section for a comparison of MathML and LaTeX.</p>
@@ -372,6 +378,7 @@
           <li>LaTeXML</li>
           <li>LaTeX.js</li>
           <li>LaTeX2HTML</li>
+          <li>sTeX</li>
         </ol>
         <h1>Markdown</h1>
         <p><a href="https://www.markdownguide.org/getting-started/" target="_blank">Markdown</a> is not so much a
@@ -420,10 +427,12 @@
         <p>
           <a href="https://math.nist.gov/~BMiller/LaTeXML/">LaTeXML</a> was developed to convert LaTeX markup to an
           internal <abbr>XML</abbr> format specifically for the <a href="https://dlmf.nist.gov/" target="_blank">Digital Library of Mathematical Functions</a> (<abbr>DLMF</abbr>) project at the <a href="https://www.nist.gov/" target="_blank">National Institute of Standards and Technology</a> (<abbr>NIST</abbr>). In turn, the
-          internal <abbr>XML</abbr> can be used to export to <abbr>HTML</abbr>, with various customizable settings. It
-          also uses MathJax to render mathematics. LaTeXML offers a <a href="https://latexml.mathweb.org/editor" target="_blank">sample web editor</a> that converts user input to rendered <abbr>HTML</abbr>, with numerous built-in examples.
+          internal <abbr>XML</abbr> can be used to export to <abbr>HTML</abbr>, with various customizable settings. 
+          LaTeXML offers a <a href="https://latexml.mathweb.org/editor" target="_blank">sample web editor</a> that converts user input to rendered <abbr>HTML</abbr>, with numerous built-in examples.
         </p>
-        <p>arXiv demo w/LaTeXML: https://ar5iv.labs.arxiv.org</p>
+        <p>
+          LaTeXML was recently used to convert the  <a href="https://ar5iv.labs.arxiv.org" target="_blank">arXiv research library to HTML</a>.  This is an exciting development that could boost accessibility adoption for mathematics and science research everywhere.
+        </p>
         <h1>LaTeX.js</h1>
         <p><a href="https://latex.js.org/" target="_blank">LaTeX.js</a> is an interesting engine that ports full LaTeX
           documents into <abbr>HTML</abbr> while also reproducing their original LaTeX style formatting, similar to
@@ -439,6 +448,13 @@
           a paginated navigation similar to the original LaTeX PDF output. It automatically generates necessary
           hyperlinks, recreates lists, and converts mathematics, tables, and figures as into images. While the process
           does not provide alt-text, an author can insert alt-text for all necessary components.</p>
+        <h1>sTeX</h1>
+        <p>
+          <a href="https://kwarc.info/systems/sTeX/" target="_blank">sTeX</a> is a set of LaTeX packages designed to embed semantic information in LaTeX generated output. sTeX can generate a PDF with some annotations and a (much richer) annotated HTML document using MathML with the <a href="#openmath">OpenMath</a> (or other user chosen) reference library. sTeX also offers a plug-in for LaTeXML.
+        </p>
+        <p>
+           sTeX is under active development, and requires some additional manual set up to use. Please read the<a href="https://github.com/slatex/sTeX/tree/main/doc" target="_blank">sTeX documentation</a> for detailed instructions and example content.
+        </p>
       </article>
     </section>
     <section class="main-section" id="screen_readers">
@@ -880,29 +896,27 @@
         </p>
 
         <h1>LaTeX</h1>
-        <p>The TeX Users Group (<abbr>TUG</abbr>) has been working to incorporate Tagged PDF functionality into LaTeX.
-          Please see:
-        <ul>
-          <li><a href="https://tug.org/TUGboat/tb41-2/tb128moore-tagging1.pdf" target="_blank">Tagging with LaTeX</a> by
-            Ross Moore</li>
-          <li><a href="http://ceur-ws.org/Vol-1010/paper-01.pdf" target="_blank">Tagged Mathematics in PDFs for
-              Accessibility and other purposes</a> by Ross Moore</li>
-          <li><a href="https://tug.org/TUGboat/tb41-1/tb127fischer-accessible.pdf" target="_blank">Creating accessible
-              pdfs with LaTeX</a> by Ulrike Fischer</li>
-          <li><a href="https://www.latex-project.org/publications/2020-FMi-TUB-tb129mitt-tagpdf.pdf"
-              target="_blank">LaTeX
-              Tagged PDF — A blueprint for a large project</a> by Frank Mittelbach and Chris
-            Rowley</li>
-          <li>LaTeX <a href="https://mirror.mwt.me/ctan/macros/latex/contrib/pdfx/pdfx.pdf" target="_blank">pdfx
-              package</a> documentation</li>
-          <li>LaTeX <a href="https://ctan.math.washington.edu/tex-archive/macros/latex/contrib/tagpdf/tagpdf.pdf"
-              target="_blank">tagpdf package</a> documentation</li>
-        </ul>
-        More articles are available at <a href="https://researchers.mq.edu.au/en/persons/ross-moore"
-          target="_blank">Ross
-          Moore's website</a> and the <a href="https://www.latex-project.org/publications/indexbytopic/pdf/"
-          target="_blank">LaTeX Project
-          website</a>.
+        <p>
+          The <a href="https://www.tug.org" target="_blank">TeX Users Group</a> (<abbr>TUG</abbr>) has been working to incorporate Tagged PDF functionality into LaTeX:
+          <ul>
+            <li><a href="https://tug.org/twg/accessibility/" target="_blank">TeX Users Group Accessibility Working Group</a> </li>
+            <li><a href="https://tug.org/TUGboat/tb41-2/tb128moore-tagging1.pdf" target="_blank">Tagging with LaTeX</a> by
+              Ross Moore</li>
+            <li><a href="http://ceur-ws.org/Vol-1010/paper-01.pdf" target="_blank">Tagged Mathematics in PDFs for
+                Accessibility and other purposes</a> by Ross Moore</li>
+            <li><a href="https://tug.org/TUGboat/tb41-1/tb127fischer-accessible.pdf" target="_blank">Creating accessible
+                pdfs with LaTeX</a> by Ulrike Fischer</li>
+            <li><a href="https://www.latex-project.org/publications/2020-FMi-TUB-tb129mitt-tagpdf.pdf"
+                target="_blank">LaTeX
+                Tagged PDF — A blueprint for a large project</a> by Frank Mittelbach and Chris
+              Rowley</li>
+            <li>LaTeX <a href="https://mirror.mwt.me/ctan/macros/latex/contrib/pdfx/pdfx.pdf" target="_blank">pdfx
+                package</a> documentation</li>
+            <li>LaTeX <a href="https://ctan.math.washington.edu/tex-archive/macros/latex/contrib/tagpdf/tagpdf.pdf"
+                target="_blank">tagpdf package</a> documentation</li>
+          </ul>
+          More articles are available at <a href="https://researchers.mq.edu.au/en/persons/ross-moore"
+          target="_blank">Ross Moore's website</a> and the <a href="https://www.latex-project.org/publications/indexbytopic/pdf/" target="_blank">LaTeX Project website</a>.
         </p>
         <p>
           This work is analagous to the efforts to render math in HTML documents. One major difference is text flow.
@@ -911,7 +925,6 @@
           Martin Ruckert's <a href="https://www.tug.org/practicaltex2018/slides/ruckert.pdf">HINT Project</a> 
           modifies TeX to have the ability to reflow text like HTML.
         </p>
-
         <h1>MathML</h1>
         <p><a href="https://movemen.com/index.html" target="_blank">MathTools for InDesign</a> by MoveMen (not to be
           confused with the <a href="https://ctan.org/pkg/mathtools?lang=en" target="_blank">mathtools package</a> for
@@ -968,7 +981,8 @@
           <code>S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a (1 - r^n)}{1 - r}</code>
         </p>
         <p>MathML:
-          <code style="white-space: pre-line";> &lt;semantics&gt;
+          <code style="white-space: pre-line";> &lt;math&gt;
+            &lt;semantics&gt;
             &nbsp; &lt;mrow&gt;
               &nbsp; &nbsp; &lt;msub&gt;
               &nbsp; &nbsp; &nbsp; &lt;mi&gt;S&lt;/mi&gt;
@@ -976,7 +990,7 @@
               &nbsp; &nbsp; &lt;/msub&gt;
               &nbsp; &nbsp; &lt;mo&gt;=&lt;/mo&gt;
               &nbsp; &nbsp; &lt;munderover&gt;
-              &nbsp; &nbsp; &nbsp; &lt;mo data-mjx-texclass="OP"&gt;&#x2211;&lt;/mo&gt;
+              &nbsp; &nbsp; &nbsp; &lt;mo data-mjx-texclass="OP"&gt;&amp;#x2211;&lt;/mo&gt;
               &nbsp; &nbsp; &nbsp; &lt;mrow data-mjx-texclass="ORD"&gt;
               &nbsp; &nbsp; &nbsp; &nbsp; &lt;mi&gt;i&lt;/mi&gt;
               &nbsp; &nbsp; &nbsp; &nbsp; &lt;mo&gt;=&lt;/mo&gt;
@@ -991,7 +1005,7 @@
               &nbsp; &nbsp; &nbsp; &lt;mi&gt;r&lt;/mi&gt;
               &nbsp; &nbsp; &nbsp; &lt;mrow data-mjx-texclass="ORD"&gt;
               &nbsp; &nbsp; &nbsp; &nbsp; &lt;mi&gt;i&lt;/mi&gt;
-              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mo&gt;&#x2212;&lt;/mo&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mo&gt;&amp;#x2212;&lt;/mo&gt;
               &nbsp; &nbsp; &nbsp; &nbsp; &lt;mn&gt;1&lt;/mn&gt;
               &nbsp; &nbsp; &nbsp; &lt;/mrow&gt;
               &nbsp; &nbsp; &lt;/msup&gt;
@@ -1001,7 +1015,7 @@
               &nbsp; &nbsp; &nbsp; &nbsp; &lt;mi&gt;a&lt;/mi&gt;
               &nbsp; &nbsp; &nbsp; &nbsp; &lt;mo stretchy="false"&gt;(&lt;/mo&gt;
               &nbsp; &nbsp; &nbsp; &nbsp; &lt;mn&gt;1&lt;/mn&gt;
-              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mo&gt;&#x2212;&lt;/mo&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mo&gt;&amp;#x2212;&lt;/mo&gt;
               &nbsp; &nbsp; &nbsp; &nbsp; &lt;msup&gt;
               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;mi&gt;r&lt;/mi&gt;
               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;mi&gt;n&lt;/mi&gt;
@@ -1010,21 +1024,23 @@
               &nbsp; &nbsp; &nbsp; &lt;/mrow&gt;
               &nbsp; &nbsp; &nbsp; &lt;mrow&gt;
               &nbsp; &nbsp; &nbsp; &nbsp; &lt;mn&gt;1&lt;/mn&gt;
-              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mo&gt;&#x2212;&lt;/mo&gt;
+              &nbsp; &nbsp; &nbsp; &nbsp; &lt;mo&gt;&amp;#x2212;&lt;/mo&gt;
               &nbsp; &nbsp; &nbsp; &nbsp; &lt;mi&gt;r&lt;/mi&gt;
               &nbsp; &nbsp; &nbsp; &lt;/mrow&gt;
               &nbsp; &nbsp; &lt;/mfrac&gt;
             &nbsp; &lt;/mrow&gt;
             &nbsp; &lt;annotation encoding="application/x-tex"&gt;S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a (1 - r^n)}{1 - r}&lt;/annotation&gt;
-          &lt;/semantics&gt;  
+          &lt;/semantics&gt;
+          &lt;/math&gt;
         </code>
         </p>
         <h1>Markdown</h1>
         <p>A Markdown file containing the LaTeX geometric series formula above:
           <code style="white-space: pre-line";> # Geometric Series
             
-            $S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a (1 - r^n)}{1 - r}$
+            $$S_n = \sum_{i=1}^{n} a r^{i-1} = \frac{a (1 - r^n)}{1 - r}$$
           </code>
+          Note the double <span class="inline-code">$$</span> delimiters around the math expression.  This will render the equation in display format.  For inline format, use a single <span class="inline-code">$</span> delimiter.  These delimiters are not used by default in MathJax.  Please see the sample <a href="#mathjax_configuration">MathJax Configuration</a> below.
         </p>
         <h1>Pandoc</h1>
         <p>A Pandoc conversion of the preceding Markdown file into HTML:
@@ -1057,7 +1073,7 @@
             &lt;/html&gt;
           </code>
         </p>
-        <h1>MathJax</h1>
+        <h1 id="mathjax_configuration">MathJax</h1>
         <p>MathJax can be configured to use familiar LaTeX delimiters, such as:
           <code style="white-space: pre-line";> &lt;script&gt;
               &nbsp; MathJax = {
@@ -1093,34 +1109,59 @@
       </article>
     </section>
     <section class="main-section" id="additional_links">
-      <header>Additional Reading</header>
+      <header>Additional Links</header>
       <article>
         <ol>
           <li>
-            <a href="https://mathml-refresh.github.io/discussion-papers/accessibility" target="_blank">MathML Accessibility Primer</a>
+            <p>
+              <a href="https://mathml-refresh.github.io/discussion-papers/accessibility" target="_blank">Math Accessibility Primer</a> by Sam Dooley and Neil Soiffer from the <a href="https://www.w3.org/Math/" target="_blank">W3C MathML Working Group</a>
+            </p>
           </li>
           <li>
-            <a href="https://mathml.igalia.com/news/2019/12/03/igalia-chats-with-neil-soiffer-on-mathml/"  target="_blank">Conversation with Brian Kardell & Neil Soiffer</a> about the history of math on the web
+            <p>
+              <a href="https://mathml.igalia.com/news/2019/12/03/igalia-chats-with-neil-soiffer-on-mathml/"  target="_blank">Conversation about the history of math on the web</a> between <a href="https://www.igalia.com/team/bkardell" target="_blank">Brian Kardell</a> (Igalia Software) & <a href="https://dl.acm.org/profile/81100521452/publications?Role=author" target="_blank">Neil Soiffer</a> (MathCAT/W3C Math Working Group)
+            </p>
+          </li>
+          <li id="openmath">
+            <p>
+              <a href="https://openmath.org/about/" target="_blank">OpenMath</a> is a standard for the semantic
+              representation of mathematical objects, aimed at communication of mathematics across different software
+              applications. The <a href="https://openmath.org/om-mml/" target="_blank">OpenMath XML</a> is an encoding of OpenMath objects. It became a source behind the development of Content MathML, and continues as a semantic reference library for Presentation MathML.
+            </p>
           </li>
           <li>
-            <a href="https://www.washington.edu/doit/" target="_blank">DO-IT from University of Washington</a>
+            <p>W3C ARIA roles for math:
+            <ul style="margin:0";>
+              <li>
+                <a href="https://www.w3.org/TR/wai-aria-1.2/#math" target="_blank">ARIA math role definition</a>
+              </li>
+              <li>
+                <a href="https://github.com/w3c/aria/issues/940" target="_blank">ARIA math role discussion</a>
+              </li>
+            </ul>            
+            </p>
           </li>
           <li>
-            <a href="https://www.w3.org/TR/wai-aria-1.2/#math" target="_blank">ARIA math role definition</a>
-            <a href="https://github.com/w3c/aria/issues/940" target="_blank">ARIA math role discussion</a>
+            <p>
+              <a href="https://www.washington.edu/doit/" target="_blank">Disabilities, Opportunities, Internetworking, and
+                Technology</a> (DO-IT), a large collection of educational research and resources from the University of Washington
+            </p>
           </li>
-          <li>            
-            <a href="https://aem.cast.org/nimas-nimac/nimas-nimac" target="_blank">National Instructional Materials Accessibility Standard</a> (NIMAS)
-          </li>
-          <li><a href="https://openmath.org/" target="_blank">OpenMath</a></li>
-          <li><a href="https://kwarc.info/systems/sTeX/" target="_blank">sTeX</a></li>
-          <li><a href="https://howard.md.networkofcare.org/veterans/assistive/list.aspx?indexingterms=tactile-aid-math" target="_blank">Tactile Aid for Math</a></li>
           <li>
-            <a href="https://dcmp.org/media/4489-vocabulary-builders-in-sign-language-math"
-              target="_blank">Sign Language Vocabulary for Math</a> by Jacksonville State University
+            <p>
+              <a href="https://aem.cast.org/nimas-nimac/nimas-nimac" target="_blank">National Instructional Materials Accessibility Standard</a> (NIMAS)
+            </p>
           </li>
-          <li><a href="https://www.chikrii.com/" target="_blank">Tex2Word</a></li>
-          <li><a href="https://ctan.org/pkg/tex2word?lang=en" target="_blank">tex2word LaTeX package</a></li>
+          <li>
+            <p>
+              <a href="https://howard.md.networkofcare.org/veterans/assistive/list.aspx?indexingterms=tactile-aid-math" target="_blank">Tactile Aid for Math</a> offers a range of elementary math manipulatives for impaired vision students
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="https://dcmp.org/media/4489-vocabulary-builders-in-sign-language-math" target="_blank">Sign Language Vocabulary for Math</a> by Jacksonville State University
+            </p>
+          </li>
           <li>
             <a href="https://www.ams.org/notices/200210/comm-morin.pdf" target="_blank">The World of Blind Mathematicians</a> (AMS article)            
           </li>
