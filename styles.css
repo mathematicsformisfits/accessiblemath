@@ -174,16 +174,18 @@ html {
     margin-bottom: 2em;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 400pt) {
     #main-doc {
       margin: 210px auto;
     }
   
     #navbar {
-      position: absolute;
+      position: fixed;
       top: 0;
       width: calc(100% - 4px);
       margin: 0 auto;
+      border-bottom: 1px solid lightGreen;
+      border-radius: 1px;
       height: calc(
         1.5rem + 20px + 4px + 4px + 4px + 3rem + 60px + 18px + 4px + 4px
       );
@@ -194,7 +196,7 @@ html {
     }
   }
   
-  @media only screen and (max-width: 300px) {
+  @media only screen and (max-width: 300pt) {
     header {
       font-size: 1rem;
       border: 0px solid yellow;
