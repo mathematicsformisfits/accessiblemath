@@ -1,6 +1,7 @@
 :root {
     --navbar-width: 300px;
     --text-color: rgba(255, 238, 209, 0.895);
+    --navbar-height: calc(4.5rem + 20px + 4px + 4px + 4px + 3rem + 60px + 18px + 4px + 4px);
   }
 
 html {
@@ -59,6 +60,10 @@ html {
     margin-bottom: 1em;
   }
 
+  footer {
+    border: 2px solid orange;
+  }
+
   header {
     font-size: 1.5rem;
     border: 0px solid yellow;
@@ -70,7 +75,7 @@ html {
   h4,
   h5,
   h6 {
-    font-weight: 5ormal;
+    font-weight: normal;
     margin-top: 2rem;
   }
   
@@ -154,7 +159,7 @@ html {
     white-space: pre;
   }
 
-      section {
+  section {
     border-bottom: 1px solid lightgreen;
     margin-bottom: 1.5rem;
   }
@@ -174,32 +179,42 @@ html {
     margin-bottom: 2em;
   }
 
-  @media only screen and (max-width: 400pt) {
+  @media only screen and (max-width: 600pt) {
     #main-doc {
-      margin: 210px auto;
+      margin: calc(25% + 1rem + 20px) auto;
+      border: 2px solid greenyellow;
     }
   
     #navbar {
       position: fixed;
       top: 0;
       width: calc(100% - 4px);
+      min-width: 100px;
       margin: 0 auto;
-      border-bottom: 1px solid lightGreen;
+      border: 0px solid pink;
+      /* border-bottom: 1px solid lightGreen; */
       border-radius: 1px;
-      height: calc(
-        1.5rem + 20px + 4px + 4px + 4px + 3rem + 60px + 18px + 4px + 4px
-      );
+      height: 25%;
+      /* height: var(--navbar-height); */
     }
-  
+
+    #navbar header {
+      margin: auto;
+      font-size: 1rem;
+      border: 2px solid magenta;
+    }
+
     #navbar ul {
-      height: calc(3rem + 60px + 18px + 4px + 4px);
+      margin: 0.5rem auto;
+      border: 2px solid yellow;
+      /* height: calc(3rem + 60px + 18px + 4px + 4px); */
     }
   }
   
   @media only screen and (max-width: 300pt) {
     header {
       font-size: 1rem;
-      border: 0px solid yellow;
+      border: 2px solid yellow;
     }
   
     #navbar ul {
