@@ -1,6 +1,7 @@
 :root {
     --navbar-width: 300px;
     --text-color: rgba(255, 238, 209, 0.895);
+    --navbar-height: calc(32px + 20px + 4px + 4px + 4px + 3rem + 60px + 18px + 4px + 4px);
   }
 
 html {
@@ -10,8 +11,7 @@ html {
     margin: 0;
     padding: 0;
     font-family: Nunito, Sanchez, Roboto, Arial, Georgia, sans-serif;
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 1.25rem;
     letter-spacing: normal;
   }
   
@@ -37,7 +37,7 @@ html {
     border: 0px solid cyan;
     text-align: left;
     margin: 0;
-  
+    line-height: 1.5rem;
     /* line-height:
     */
   }
@@ -59,6 +59,10 @@ html {
     margin-bottom: 1em;
   }
 
+  /* footer {
+    border: 2px solid orange;
+  } */
+
   header {
     font-size: 1.5rem;
     border: 0px solid yellow;
@@ -70,7 +74,7 @@ html {
   h4,
   h5,
   h6 {
-    font-weight: 5ormal;
+    font-weight: normal;
     margin-top: 2rem;
   }
   
@@ -98,7 +102,7 @@ html {
     position: fixed;
     top: 0;
     left: 0px;
-    min-width: 150px;
+    /* min-width: 150px; */
     width: var(--navbar-width);
     height: 99%;
     background-color: black;
@@ -141,7 +145,7 @@ html {
     border: 0px solid yellow;
     padding: 0;
     margin: 0;
-    height: 90%;
+    height: 80%;
     overflow-y: auto;
     overflow-x: hidden;
     /* */
@@ -154,7 +158,7 @@ html {
     white-space: pre;
   }
 
-      section {
+  section {
     border-bottom: 1px solid lightgreen;
     margin-bottom: 1.5rem;
   }
@@ -174,34 +178,77 @@ html {
     margin-bottom: 2em;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 500pt) {
+    html {
+      font-size: 1.2rem;
+    }
+    
+    body {
+      border: 0px solid cyan;
+      text-align: left;
+      margin: 0;
+      line-height: 1.5rem;
+      /* line-height:
+        */
+    }
+
+    code {
+      display: block;
+      margin: 20px;
+      padding: 10px;
+      line-height: 1.5;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: black;
+      background-color: #f3f3eb;
+      border: 0px solid gray;
+      border-radius: 5px;
+    }
+
     #main-doc {
-      margin: 210px auto;
+      margin: calc(var(--navbar-height) + 4px) auto;
+      border: 0px solid greenyellow;
+      overflow-y: auto;
     }
   
     #navbar {
-      position: absolute;
+      position: fixed;
       top: 0;
       width: calc(100% - 4px);
+      /* min-width: 100px; */
       margin: 0 auto;
-      height: calc(
-        1.5rem + 20px + 4px + 4px + 4px + 3rem + 60px + 18px + 4px + 4px
-      );
+      padding: 0 0 5px 0;
+      border: 0px solid pink;
+      /* border-bottom: 1px solid lightGreen; */
+      /* border-radius: 1px; */
+      /* height: 25%; */
+      height: var(--navbar-height);
     }
-  
+
+    #navbar header {
+      margin: auto;
+      font-size: 1rem;
+      /* border: 0px solid magenta; */
+    }
+
     #navbar ul {
-      height: calc(3rem + 60px + 18px + 4px + 4px);
+      margin: 0.5rem auto;
+      /* border: 0px solid yellow; */ 
+      border-bottom: 1px solid lightGreen;
+      border-radius: 1px;
+      height: calc(48px + 60px + 18px + 4px + 4px); 
+      overflow-y: auto;
     }
   }
   
-  @media only screen and (max-width: 300px) {
+  /* @media only screen and (max-width: 300pt) {
     header {
       font-size: 1rem;
-      border: 0px solid yellow;
-    }
+      border: 0px solid orange;
+    } */ 
   
-    #navbar ul {
+  /*  #navbar ul {
       height: calc(2rem + 50px + 16px + 4px + 4px);
     }
-  }
+  } */
   
