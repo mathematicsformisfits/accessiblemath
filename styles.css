@@ -239,8 +239,13 @@ html {
       height: calc(48px + 60px + 18px + 4px + 4px); 
       overflow-y: auto;
     }
-  }
+
+    section {
+      scroll-margin-top: calc(var(--navbar-height) + 20px);
+    }
+}
   
+
   /* @media only screen and (max-width: 300pt) {
     header {
       font-size: 1rem;
