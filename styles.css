@@ -1,7 +1,7 @@
 :root {
     --navbar-width: 300px;
     --text-color: rgba(255, 238, 209, 0.895);
-    --navbar-height: calc(32px + 20px + 4px + 4px + 4px + 3rem + 60px + 18px + 4px + 4px);
+    --navbar-height: calc(32px + 4px + 4px + 4px + 3rem + 60px + 18px + 4px + 4px);
   }
 
 html {
@@ -182,7 +182,7 @@ html {
     margin-bottom: 2em;
   }
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 600px) {
     html {
       font-size: 1.2rem;
     }
@@ -210,9 +210,12 @@ html {
     }
 
     header {
-      margin: auto;
+      /* margin: auto; */
+      left: 0;
       font-size: 1rem;
-      /* border: 0px solid magenta; */
+      border: 0px solid magenta;
+      width: calc(100% - 4px - 4px);0
+      height: 2rem;
     }
 
     #main-doc {
@@ -223,12 +226,13 @@ html {
   
     #navbar {
       position: fixed;
-      top: 3rem;
+      top: 2.5rem;
       width: calc(100% - 4px);
       /* min-width: 100px; */
       margin: 0 auto;
       padding: 0 0 5px 0;
       border: 0px solid pink;
+      border-top: 1px solid lightgreen;
       /* border-bottom: 1px solid lightGreen; */
       /* border-radius: 1px; */
       /* height: 25%; */
