@@ -64,10 +64,21 @@ html {
   } */
 
   header {
+    position: fixed;
+    top: 0;
+    left: 4px;
     font-size: 1.5rem;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
     border: 0px solid yellow;
+    background-color: black;
+    border-bottom: 1px solid lightgreen;
+    /* height: 4rem; */
+    width: calc(var(--navbar-width) - 20px);
   }
-  
+   
+
   h1,
   h2,
   h3,
@@ -88,7 +99,7 @@ html {
     /* position: absolute; */
     margin-left: calc(var(--navbar-width) + 4px + 10px);
     text-align: left;
-    padding: 20px;
+    padding: 10px;
     border: 0px solid pink;
   }
   
@@ -100,7 +111,7 @@ html {
   
   #navbar {
     position: fixed;
-    top: 0;
+    top: 4.5rem;
     left: 0px;
     /* min-width: 150px; */
     width: var(--navbar-width);
@@ -124,14 +135,7 @@ html {
     padding: 2px;
     margin: 6px;
   }
-  
-  #navbar header {
-    text-align: center;
-    margin: 10px;
-    padding: 10px;
-    border-bottom: 1px solid lightgreen;
-  }
-  
+
   #navbar li {
     width: 90%;
     list-style: none;
@@ -178,7 +182,7 @@ html {
     margin-bottom: 2em;
   }
 
-  @media only screen and (max-width: 500pt) {
+  @media only screen and (max-width: 400px) {
     html {
       font-size: 1.2rem;
     }
@@ -205,6 +209,12 @@ html {
       border-radius: 5px;
     }
 
+    header {
+      margin: auto;
+      font-size: 1rem;
+      /* border: 0px solid magenta; */
+    }
+
     #main-doc {
       margin: calc(var(--navbar-height) + 4px) auto;
       border: 0px solid greenyellow;
@@ -213,7 +223,7 @@ html {
   
     #navbar {
       position: fixed;
-      top: 0;
+      top: 3rem;
       width: calc(100% - 4px);
       /* min-width: 100px; */
       margin: 0 auto;
@@ -223,12 +233,6 @@ html {
       /* border-radius: 1px; */
       /* height: 25%; */
       height: var(--navbar-height);
-    }
-
-    #navbar header {
-      margin: auto;
-      font-size: 1rem;
-      /* border: 0px solid magenta; */
     }
 
     #navbar ul {
